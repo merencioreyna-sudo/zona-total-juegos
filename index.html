@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Total Juegos</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+	
+<!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Zona Total Juegos</h1>
+      <p>Juega. Compite. Diviértete.</p>
+      <button class="btn-primary">Jugar ahora</button>
+    </div>
+  </header>
+
+  <!-- JUEGOS DESTACADOS -->
+  <section class="featured-games reveal">
+
+    <h2>Juegos destacados</h2>
+
+    <div class="featured-grid">
+      <article class="game-card featured">
+        <h3>Trivia Rápida</h3>
+        <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
+      </article>
+
+      <article class="game-card featured">
+        <h3>Carreras Arcade</h3>
+        <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
+      </article>
+
+      <article class="game-card featured">
+        <h3>Memoria Visual</h3>
+        <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- SELECTOR DE EDADES -->
+  <section class="age-filter">
+    <h2>Elige tu categoría</h2>
+
+    <div class="age-buttons">
+      <button class="age-btn active">Adolescentes</button>
+      <button class="age-btn">Para Todos</button>
+    </div>
+  </section>
+
+  <!-- GRID DE JUEGOS -->
+  <main class="games-grid">
+    <h2>Todos los juegos</h2>
+
+    <article class="game-card">
+      <h3>Trivia Rápida</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Cartas Clásicas</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="cartas-clasicas">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Carreras Arcade</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Combate Ligero</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="combate-ligero">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Memoria Visual</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Juego de Reflejos</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="juego-reflejos">Jugar</button>
+    </article>
+  </main>
+
+  <!-- BLOQUE INFERIOR -->
+  <div class="bottom-wrapper">
+
+    <!-- RETO DEL DÍA -->
+    <section class="challenge">
+      <h2>🔥 Reto del día</h2>
+      <button class="btn-primary">Intentar reto</button>
+    </section>
+
+    <!-- CTA FINAL -->
+    <footer class="final-cta">
+      <h2>¿Listo para jugar?</h2>
+      <button class="btn-primary">Empieza ahora</button>
+    </footer>
+
+  </div>
+
+  <!-- JS principal -->
+  <script src="scripts/main.js"></script>
+  
+
+</div>
+
+
+
+<!-- VENTANA JUEGOS EXTERNOS -->
+<div id="games-modal-overlay" hidden>
+  <div class="games-modal">
+
+    <div class="games-modal-header">
+      
+      <button id="close-games-modal">✕</button>
+    </div>
+
+    <div class="games-modal-content">
+      <div class="external-game">Juego 1</div>
+      <div class="external-game">Juego 2</div>
+      <div class="external-game">Juego 3</div>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
