@@ -1081,9 +1081,9 @@ html, body {
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(3, 90px);
-  gap: 14px;
+  gap: 15px;
   justify-content: center;
-  margin-top: 40px;
+  margin: 0 auto;
 
   /* 🔧 AJUSTE VISUAL TABLERO (únicos cambios) */
   padding: 18px;
@@ -1096,9 +1096,8 @@ html, body {
 }
 
 /* Desktop */
-@media (min-width: 768px) {
-  .memory-grid {
-    grid-template-columns: repeat(4, 100px);
+@media (max-width: 800px;) {
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 18px;
   }
 }
@@ -1462,3 +1461,4 @@ html, body {
     0 0 18px rgba(255, 0, 0, 0.6),
     0 0 28px rgba(0, 224, 255, 0.4);
 }
+
