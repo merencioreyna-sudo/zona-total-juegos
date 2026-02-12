@@ -1462,28 +1462,3 @@ html, body {
     0 0 18px rgba(255, 0, 0, 0.6),
     0 0 28px rgba(0, 224, 255, 0.4);
 }
-
-/* === FIX SOLICITADO POR REYNA: columnas en PC y tamaño móvil === */
-
-/* En PC: siempre 6 columnas exactas */
-@media (min-width: 768px) {
-  .memory-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .memory-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .memory-card {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    font-size: 58px; /* grande para emoji o texto */
-  }
-}
-
