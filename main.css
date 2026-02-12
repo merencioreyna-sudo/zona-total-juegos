@@ -1469,12 +1469,27 @@ html, body {
 @media (min-width: 768px) {
   .memory-grid {
     grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    justify-content: center;
   }
 }
 
+
 /* En móvil: aumentar tamaño visual de carta */
 @media (max-width: 767px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 12px;
+    width: 100%;
+    max-width: none;
+  }
+
   .memory-card {
-    font-size: 52px;
+    font-size: 48px;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 }
+
+
