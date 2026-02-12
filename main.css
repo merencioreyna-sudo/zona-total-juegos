@@ -1462,3 +1462,19 @@ html, body {
     0 0 18px rgba(255, 0, 0, 0.6),
     0 0 28px rgba(0, 224, 255, 0.4);
 }
+
+/* === FIX SOLICITADO POR REYNA: columnas en PC y tamaño móvil === */
+
+/* En PC: siempre 6 columnas exactas */
+@media (min-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* En móvil: aumentar tamaño visual de carta */
+@media (max-width: 767px) {
+  .memory-card {
+    font-size: 52px;
+  }
+}
