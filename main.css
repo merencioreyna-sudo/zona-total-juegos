@@ -1522,3 +1522,58 @@ html, body {
     aspect-ratio: 1 / 1;
   }
 }
+
+/* === FIX GENERAL — RESTAURAR TAMAÑO DE JUEGOS EN MÓVIL === */
+
+/* MÓVIL: los juegos deben ocupar TODO EL ANCHO y verse grandes */
+@media (max-width: 767px) {
+
+  /* --- CARTAS CLÁSICAS --- */
+  .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    padding: 0 10px !important;
+  }
+
+  .memory-card {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    font-size: 54px !important;
+  }
+
+  /* --- MEMORIA VISUAL --- */
+  .memory-board {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    padding: 12px !important;
+  }
+
+  .memory-item,
+  .memory-slot {
+    height: 90px !important;
+    font-size: 28px !important;
+  }
+
+  /* --- TRIVIA RÁPIDA --- */
+  .trivia-game {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 16px !important;
+    margin: 0 auto !important;
+  }
+
+  .trivia-answers button {
+    font-size: 16px !important;
+    padding: 14px !important;
+  }
+
+  .game-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+  }
+}
