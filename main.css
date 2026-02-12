@@ -1637,3 +1637,59 @@ html, body {
     padding: 14px !important;
   }
 }
+
+/* === FIX GLOBAL FINAL — MÓVIL: Juegos al 100% y tamaño correcto === */
+
+@media (max-width: 767px) {
+
+  /* CARTAS CLÁSICAS (Parejas) */
+  .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    padding: 0 10px !important;
+  }
+
+  .memory-card {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    font-size: 55px !important;
+  }
+
+  /* MEMORIA VISUAL */
+  .memory-board {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    padding: 10px !important;
+  }
+
+  .memory-item,
+  .memory-slot {
+    height: 95px !important;
+    font-size: 28px !important;
+  }
+
+  /* TRIVIA RÁPIDA */
+  .trivia-game {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .trivia-answers button {
+    font-size: 18px !important;
+    padding: 14px !important;
+  }
+
+  .game-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+  }
+}
+
