@@ -1493,3 +1493,32 @@ html, body {
 }
 
 
+
+
+
+/* === FIX FINAL SOLO PARA "Cartas Clásicas" (Parejas) === */
+
+/* En PC: mínimo 6 columnas exactas, crecer hacia abajo */
+@media (min-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    justify-content: center;
+  }
+}
+
+/* En móvil: restaurar como estaba (cartas grandes y sin espacio lateral) */
+@media (max-width: 767px) {
+  .memory-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 12px;
+    width: 100%;
+    max-width: none;
+  }
+
+  .memory-card {
+    font-size: 52px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
