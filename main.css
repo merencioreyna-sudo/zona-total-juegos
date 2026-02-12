@@ -1577,3 +1577,63 @@ html, body {
     padding: 0 10px !important;
   }
 }
+
+/* ============================================
+   FIX FINAL — SOLO PARA MÓVIL (≤ 767px)
+   Sin tocar nada existente. Solo corrige tamaños.
+============================================ */
+
+@media (max-width: 767px) {
+
+  /* --- CARTAS CLÁSICAS (Parejas) --- */
+  .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .memory-grid .memory-card {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    font-size: 54px !important;
+  }
+
+
+  /* --- MEMORIA VISUAL --- */
+  .memory-board {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .memory-item,
+  .memory-slot {
+    height: 95px !important;
+    font-size: 30px !important;
+  }
+
+
+  /* --- TRIVIA RÁPIDA --- */
+  .game-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+  }
+
+  .trivia-game {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 18px !important;
+  }
+
+  .trivia-answers button {
+    font-size: 18px !important;
+    padding: 14px !important;
+  }
+}
