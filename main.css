@@ -945,16 +945,11 @@ html, body {
 /* TABLERO */
 .memory-grid {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(3, 90px);
+  gap: 14px;
   justify-content: center;
   margin-top: 40px;
-
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
-
 
 /* Desktop */
 @media (min-width: 768px) {
@@ -966,6 +961,13 @@ html, body {
 
 
 /* CARTA */
+.memory-card {
+  width: 90px;
+  height: 120px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
 /* INTERIOR (para volteo) */
 .card-inner {
   width: 100%;
@@ -1079,9 +1081,9 @@ html, body {
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(3, 90px);
-  gap: 15px;
+  gap: 14px;
   justify-content: center;
-  margin: 0 auto;
+  margin-top: 40px;
 
   /* 🔧 AJUSTE VISUAL TABLERO (únicos cambios) */
   padding: 18px;
@@ -1094,34 +1096,21 @@ html, body {
 }
 
 /* Desktop */
-@media (max-width: 800px;) {
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+@media (min-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, 100px);
     gap: 18px;
   }
 }
 
 
 /* CARTA */
-.memory-grid {
-  display: grid;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 40px;
-
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.03);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.08),
-    0 0 18px rgba(255,255,255,0.06);
+.memory-card {
+  width: 90px;
+  height: 120px;
+  perspective: 1200px;
+  cursor: pointer;
 }
-
 
 /* INTERIOR (para volteo) */
 .card-inner {
@@ -1474,4 +1463,18 @@ html, body {
     0 0 28px rgba(0, 224, 255, 0.4);
 }
 
+/* === FIX SOLICITADO POR REYNA: columnas en PC y tamaño móvil === */
 
+/* En PC: siempre 6 columnas exactas */
+@media (min-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* En móvil: aumentar tamaño visual de carta */
+@media (max-width: 767px) {
+  .memory-card {
+    font-size: 52px;
+  }
+}
