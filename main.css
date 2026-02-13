@@ -938,50 +938,72 @@ html, body {
   box-shadow: 0 14px 30px rgba(0,0,0,0.7), 0 0 18px rgba(255, 0, 0, 0.6), 0 0 28px rgba(0, 224, 255, 0.4);
 }
 
-/* ===== AJUSTE DE ANCHO PARA LOS 3 JUEGOS ===== */
-.game-wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 20px 16px !important;
-  margin: 0 auto !important;
-}
-
-/* TRIVIA RÁPIDA - ya tiene el ancho correcto */
-.trivia-game {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-/* CARTAS CLÁSICAS - forzar mismo ancho */
-.memory-grid {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 20px auto !important;
-  padding: 16px !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 12px !important;
-}
-
-/* MEMORIA VISUAL - forzar mismo ancho */
-.memory-board {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 16px auto !important;
-  padding: 16px !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 12px !important;
-}
-
-/* Para desktop mantenemos proporción */
-@media (min-width: 768px) {
-  .memory-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-    max-width: 500px !important;
+/* ===== FIX COMPLETO PARA LOS 3 JUEGOS (ANCHO COMPLETO) ===== */
+@media (max-width: 767px) {
+  
+  /* Contenedor principal de TODOS los juegos */
+  .game-wrapper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 16px 12px !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
   }
   
+  /* TRIVIA RÁPIDA */
+  .trivia-game {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 16px !important;
+  }
+  
+  /* CARTAS CLÁSICAS */
+  .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    padding: 12px !important;
+    margin: 0 !important;
+  }
+  
+  .memory-card {
+    width: 100% !important;
+    aspect-ratio: 3/4 !important;
+  }
+  
+  .card-front, .card-back {
+    font-size: 28px !important;
+  }
+  
+  /* MEMORIA VISUAL */
   .memory-board {
-    grid-template-columns: repeat(4, 1fr) !important;
-    max-width: 500px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    padding: 12px !important;
+    margin: 0 !important;
+  }
+  
+  .memory-board .memory-card {
+    aspect-ratio: 1/1 !important;
+    font-size: 40px !important;
+  }
+  
+  /* Eliminar márgenes y paddings externos */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  
+  .page-wrapper, .memoria-visual-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
