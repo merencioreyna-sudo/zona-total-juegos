@@ -441,12 +441,22 @@ html, body {
 
 /* Panel del juego */
 .trivia-game {
-  width: 100%;
+  width: 90%; /* Valor por defecto para PC */
+  max-width: 900px; /* Evita que se estire demasiado */
   background: linear-gradient(180deg, #1a1a2e, #141427);
   border-radius: 24px;
   padding: 32px 28px;
   box-shadow: 0 26px 70px rgba(0,0,0,.6);
   text-align: center;
+  margin: 0 auto; /* Centrado */
+}
+
+/* En móvil, que ocupe todo el ancho */
+@media (max-width: 767px) {
+  .trivia-game {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Título del juego (inyectado por JS) */
@@ -629,6 +639,24 @@ html, body {
     gap: 18px;
     width: 100%;
     max-width: 100%;
+  }
+}
+
+/* Ajuste para Cartas Clásicas en PC */
+@media (min-width: 768px) {
+  .game-card .memory-grid {
+    width: auto !important;
+    max-width: 500px !important;
+    margin: 10px auto !important;
+  }
+}
+
+/* En móvil, que ocupe todo el ancho */
+@media (max-width: 767px) {
+  .game-card .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
 
@@ -946,3 +974,4 @@ html, body {
   max-width: 100% !important;
   margin: 0 !important;
 }
+
