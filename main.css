@@ -937,3 +937,51 @@ html, body {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.7), 0 0 18px rgba(255, 0, 0, 0.6), 0 0 28px rgba(0, 224, 255, 0.4);
 }
+
+/* ===== AJUSTE DE ANCHO PARA LOS 3 JUEGOS ===== */
+.game-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 20px 16px !important;
+  margin: 0 auto !important;
+}
+
+/* TRIVIA RÁPIDA - ya tiene el ancho correcto */
+.trivia-game {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* CARTAS CLÁSICAS - forzar mismo ancho */
+.memory-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 20px auto !important;
+  padding: 16px !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+}
+
+/* MEMORIA VISUAL - forzar mismo ancho */
+.memory-board {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 16px auto !important;
+  padding: 16px !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+}
+
+/* Para desktop mantenemos proporción */
+@media (min-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    max-width: 500px !important;
+  }
+  
+  .memory-board {
+    grid-template-columns: repeat(4, 1fr) !important;
+    max-width: 500px !important;
+  }
+}
