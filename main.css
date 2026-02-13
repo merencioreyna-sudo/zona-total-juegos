@@ -1098,7 +1098,7 @@ html, body {
 /* Desktop */
 @media (min-width: 768px) {
   .memory-grid {
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(6, 100px);
     gap: 18px;
   }
 }
@@ -1462,3 +1462,4 @@ html, body {
     0 0 18px rgba(255, 0, 0, 0.6),
     0 0 28px rgba(0, 224, 255, 0.4);
 }
+
