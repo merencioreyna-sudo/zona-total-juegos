@@ -625,9 +625,10 @@ html, body {
 
 @media (min-width: 768px) {
   .memory-grid {
-    grid-template-columns: repeat(4, minmax(90px, 100px));
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -938,6 +939,7 @@ html, body {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.7), 0 0 18px rgba(255, 0, 0, 0.6), 0 0 28px rgba(0, 224, 255, 0.4);
 }
+
 
 
 
