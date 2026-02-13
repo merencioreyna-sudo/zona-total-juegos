@@ -1480,3 +1480,17 @@ html, body {
   }
 
 }
+/* ===============================
+   FIX REAL — JUEGOS FULL WIDTH EN MÓVIL
+   =============================== */
+
+@media (max-width: 600px) {
+
+  .cards-board,
+  .memory-stage,
+  .trivia-game {
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
