@@ -1462,3 +1462,21 @@ html, body {
     0 0 18px rgba(255, 0, 0, 0.6),
     0 0 28px rgba(0, 224, 255, 0.4);
 }
+
+/* ===============================
+   FIX GLOBAL JUEGOS — MÓVIL FULL WIDTH
+   =============================== */
+
+@media (max-width: 600px) {
+
+  .game-wrapper,
+  .memoria-visual-container,
+  .cards-board,
+  .memory-stage {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+}
