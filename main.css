@@ -579,7 +579,7 @@ html, body {
 @media (min-width: 768px) {
   .memory-board {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 500px;
+    max-width: 900px;
   }
 }
 
@@ -1002,3 +1002,4 @@ html, body {
     margin: 0 !important;
   }
 }
+
