@@ -958,3 +958,35 @@ html, body {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.7), 0 0 18px rgba(255, 0, 0, 0.6), 0 0 28px rgba(0, 224, 255, 0.4);
 }
+
+/* ===== FIX PARA PC - LIMITAR ANCHO DE LOS JUEGOS ===== */
+@media (min-width: 1024px) {
+  /* Trivia Rápida */
+  .trivia-game {
+    width: 70% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Cartas Clásicas */
+  .memory-grid {
+    width: 70% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Memoria Visual */
+  .memory-board {
+    width: 70% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Contenedores generales */
+  .game-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
