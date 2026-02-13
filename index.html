@@ -1,673 +1,143 @@
-:root {
-  --bg-dark: #0b0b12;
-  --bg-card: #141427;
-  --text-light: #ffffff;
-  --text-muted: #b5b5c5;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Total Juegos</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+	
+<!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Zona Total Juegos</h1>
+      <p>Juega. Compite. Diviértete.</p>
+      <button class="btn-primary">Jugar ahora</button>
+    </div>
+  </header>
+
+  <!-- JUEGOS DESTACADOS -->
+  <section class="featured-games reveal">
+
+    <h2>Juegos destacados</h2>
+
+    <div class="featured-grid">
+      <article class="game-card featured">
+        <h3>Trivia Rápida</h3>
+        <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
+      </article>
+
+      <article class="game-card featured">
+        <h3>Carreras Arcade</h3>
+        <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
+      </article>
+
+      <article class="game-card featured">
+        <h3>Memoria Visual</h3>
+        <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- SELECTOR DE EDADES -->
+  <section class="age-filter">
+    <h2>Elige tu categoría</h2>
+
+    <div class="age-buttons">
+      <button class="age-btn active">Adolescentes</button>
+      <button class="age-btn">Para Todos</button>
+    </div>
+  </section>
+
+  <!-- GRID DE JUEGOS -->
+  <main class="games-grid">
+    <h2>Todos los juegos</h2>
+
+    <article class="game-card">
+      <h3>Trivia Rápida</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Cartas Clásicas</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="cartas-clasicas">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Carreras Arcade</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Combate Ligero</h3>
+      <span class="badge">Adolescentes</span>
+      <button class="btn-secondary" data-game="combate-ligero">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Memoria Visual</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
+    </article>
+
+    <article class="game-card">
+      <h3>Juego de Reflejos</h3>
+      <span class="badge">Para Todos</span>
+      <button class="btn-secondary" data-game="juego-reflejos">Jugar</button>
+    </article>
+  </main>
+
+  <!-- BLOQUE INFERIOR -->
+  <div class="bottom-wrapper">
+
+    <!-- RETO DEL DÍA -->
+    <section class="challenge">
+      <h2>🔥 Reto del día</h2>
+      <button class="btn-primary">Intentar reto</button>
+    </section>
 
-  --neon-blue: #3cf2ff;
-  --neon-purple: #b36bff;
-  --neon-green: #3dff9f;
-  --neon-yellow: #ffe66d;
-  --neon-pink: #ff5bd7;
-}
+    <!-- CTA FINAL -->
+    <footer class="final-cta">
+      <h2>¿Listo para jugar?</h2>
+      <button class="btn-primary">Empieza ahora</button>
+    </footer>
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
+  </div>
 
-body {
-  background: radial-gradient(circle at top, #141427, #0b0b12);
-  color: var(--text-light);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+  <!-- JS principal -->
+  <script src="scripts/main.js"></script>
+  
 
-/* ================= HERO ================= */
+</div>
 
-.hero {
-  padding: 3rem 1.5rem;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(179,107,255,0.15), transparent);
-}
 
-.hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 18px var(--neon-purple);
-}
 
-.hero p {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
+<!-- VENTANA JUEGOS EXTERNOS -->
+<div id="games-modal-overlay" hidden>
+  <div class="games-modal">
 
-.btn-primary {
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  border: none;
-  border-radius: 999px;
-  padding: 0.8rem 1.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #000;
-}
+    <div class="games-modal-header">
+      
+      <button id="close-games-modal">✕</button>
+    </div>
 
-/* ================= SECCIONES GENERALES ================= */
+    <div class="games-modal-content">
+      <div class="external-game">Juego 1</div>
+      <div class="external-game">Juego 2</div>
+      <div class="external-game">Juego 3</div>
+    </div>
 
-section,
-main,
-footer {
-  padding: 2.5rem 1.5rem;
-}
+  </div>
+</div>
 
-h2 {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-}
 
-/* ================= FEATURED ================= */
-
-.featured-grid {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.featured {
-  background: var(--bg-card);
-  border-radius: 1.2rem;
-  padding: 2rem;
-  box-shadow: 0 0 25px rgba(179,107,255,0.25);
-}
-
-.featured-games {
-  text-align: center;
-}
-
-/* ================= AGE FILTER ================= */
-
-.age-filter {
-  text-align: center;
-}
-
-.age-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.age-btn {
-  background: #1f1f3a;
-  color: var(--text-light);
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.age-btn.active {
-  background: var(--neon-pink);
-  color: #000;
-}
-
-/* ================= GAME GRID ================= */
-
-.games-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.games-grid > h2 {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-
-.game-card {
-  background: var(--bg-card);
-  border-radius: 1.2rem;
-  padding: 1.5rem;
-  min-height: 200px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.22);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-@media(hover:hover){
-  .game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,.25);
-  }
-}
-
-.game-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.85rem;
-  opacity: 0.75;
-  margin-bottom: 1rem;
-  color: var(--neon-yellow);
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--neon-blue);
-  color: var(--neon-blue);
-  padding: 0.5rem 1.4rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-/* ================= BLOQUE INFERIOR ================= */
-
-.bottom-wrapper {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-end;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-.challenge,
-.final-cta {
-  text-align: center;
-  box-shadow: none;
-}
-
-.challenge h2,
-.final-cta h2 {
-  white-space: nowrap;
-  line-height: 1.2;
-}
-
-@media(max-width:767px){
-  .bottom-wrapper {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-}
-
-/* ================= ANIMACIONES ================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: revealFadeUp 500ms ease forwards;
-}
-
-@keyframes revealFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media(prefers-reduced-motion: reduce){
-  .reveal {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ================= OVERLAY JUEGOS EXTERNOS ================= */
-
-#games-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-#games-modal-overlay[hidden] {
-  display: none;
-}
-
-.games-modal {
-  background: linear-gradient(135deg, #6ecbff, #ff8fd4);
-  color: #fff;
-  width: 90%;
-  max-width: 900px;
-  border-radius: 18px;
-  padding: 22px;
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 0 25px rgba(110,203,255,0.9),
-    0 0 45px rgba(255,143,212,0.85),
-    0 0 70px rgba(110,203,255,0.6);
-}
-
-.games-modal-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.games-modal-header button {
-  background: none;
-  border: none;
-  font-size: 22px;
-  color: #fff;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.games-modal-header button:hover {
-  opacity: 1;
-}
-
-.games-modal-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 18px;
-}
-
-.external-game {
-  background: #222;
-  padding: 70px 20px;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.external-game:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow:
-    0 14px 30px rgba(0,0,0,0.7),
-    0 0 18px rgba(255,0,0,0.6),
-    0 0 28px rgba(0,224,255,0.4);
-}
-/* ===============================
-   TRIVIA RÁPIDA — BASE
-================================= */
-
-.game-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 48px 16px;
-}
-
-.trivia-game {
-  width: 100%;
-  max-width: 640px;
-  background: linear-gradient(180deg, #1a1a2e, #141427);
-  border-radius: 24px;
-  padding: 32px 28px;
-  box-shadow: 0 26px 70px rgba(0,0,0,.6);
-  text-align: center;
-}
-
-.game-wrapper > h1 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.trivia-question p {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 28px;
-}
-
-.trivia-answers {
-  display: grid;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.trivia-answers button {
-  width: 100%;
-  background: #1f1f3a;
-  color: #fff;
-  border: 1px solid #2f2f55;
-  border-radius: 16px;
-  padding: 14px 18px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
-}
-
-.trivia-answers button:hover {
-  background: #2a2a55;
-  transform: translateY(-1px);
-}
-
-.trivia-answers button.correct {
-  background: #2ecc71;
-  color: #000;
-}
-
-.trivia-answers button.incorrect {
-  background: #e74c3c;
-  color: #000;
-}
-
-.trivia-next {
-  margin-top: 20px;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  border: none;
-  border-radius: 999px;
-  padding: 12px 26px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #000;
-}
-
-.game-wrapper p {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-align: center;
-  color: var(--neon-yellow);
-  text-shadow: 0 0 6px rgba(255,230,109,.8), 0 0 14px rgba(255,230,109,.6);
-}
-
-.trivia-restart {
-  display: block;
-  margin: 0 auto;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  border: none;
-  border-radius: 999px;
-  padding: 12px 28px;
-  font-weight: 700;
-  cursor: pointer;
-  color: #000;
-  box-shadow: 0 0 18px rgba(179,107,255,.6);
-}
-
-/* ===============================
-   TRIVIA — CORRECCIONES MÓVIL
-================================= */
-
-@media (max-width: 768px) {
-  .game-wrapper {
-    padding: 24px 12px;
-  }
-
-  .trivia-game {
-    padding: 24px 18px;
-  }
-}
-
-@media (max-width: 600px) {
-  .game-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding-left: 12px;
-    padding-right: 12px;  /* margen seguro en móvil */
-  }
-
-  .trivia-game {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px 16px;
-    margin: 0 auto;
-  }
-}
-
-/* ===============================
-   MEMORIA VISUAL — BASE
-================================= */
-
-.memory-stage {
-  background: radial-gradient(circle at top, #1f1f3a, #141427);
-  border-radius: 20px;
-  padding: 24px;
-  margin: 32px auto;
-  max-width: 420px;
-  box-shadow: 0 20px 45px rgba(0,0,0,.55);
-}
-
-.memory-stage {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 16px;
-}
-
-.memory-item,
-.memory-slot {
-  height: 80px;
-  background: linear-gradient(180deg, #2a2a55, #1a1a33);
-  color: #fff;
-  font-weight: 600;
-  font-size: 22px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 -4px 0 rgba(0,0,0,.4);
-  cursor: pointer;
-}
-
-.memory-slot.correct {
-  background: linear-gradient(180deg, #2ecc71, #27ae60);
-}
-
-.memory-slot.wrong {
-  background: linear-gradient(180deg, #e74c3c, #c0392b);
-}
-
-.memory-start,
-.memory-restart {
-  margin-top: 20px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  color: #000;
-  box-shadow: 0 10px 30px rgba(0,0,0,.45);
-}
-
-.memory-start:hover,
-.memory-restart:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(0,0,0,.55);
-}
-
-/* ===============================
-   MEMORIA VISUAL — MÓVIL
-================================= */
-
-@media (max-width: 600px) {
-  .memory-stage {
-    width: calc(100vw - 16px);
-    margin: 24px auto;
-    padding: 16px;
-    grid-template-columns: repeat(3, 1fr);  /* 3 columnas grandes */
-    gap: 14px;
-  }
-
-  .memory-item,
-  .memory-slot {
-    height: 90px;
-    font-size: 28px;
-  }
-}
-
-/* ===============================
-   CARTAS CLÁSICAS — BASE
-================================= */
-
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 90px);
-  gap: 14px;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.memory-card {
-  width: 90px;
-  height: 120px;
-  perspective: 1200px;
-  cursor: pointer;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 1.3s ease;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-}
-
-.memory-card.flipped .card-inner {
-  transform: rotateY(180deg) scale(1.02);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.45);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-front {
-  background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
-  border: 2px solid #666;
-  color: #aaa;
-  font-size: 22px;
-}
-
-.card-front::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 8px;
-  background: repeating-linear-gradient(45deg, #2b2b2b, #2b2b2b 8px, #232323 8px, #232323 16px);
-  opacity: 0.9;
-}
-
-.card-back {
-  background: linear-gradient(180deg, #ffffff, #f1f1f1);
-  border: 2px solid #ddd;
-  box-shadow: inset 0 0 0 2px #fafafa, 0 8px 18px rgba(0,0,0,0.35);
-  font-size: 36px;
-  transform: rotateY(180deg);
-}
-/* ============================================================
-   FIX GLOBAL — EVITAR QUE ALGUNA REGLA VIEJA PISE LOS TAMAÑOS
-   ============================================================ */
-@media (max-width: 767px) {
-  .game-wrapper,
-  .trivia-game,
-  .memory-stage,
-  .memory-board,
-  .memory-grid {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-
-/* ============================================================
-   🟣 TRIVIA RÁPIDA — MÓVIL (Margen seguro)
-   ============================================================ */
-@media (max-width: 767px) {
-  .game-wrapper {
-    padding: 0 12px !important;
-  }
-
-  .trivia-game {
-    padding: 20px 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .trivia-answers button {
-    font-size: 16px !important;
-    padding: 14px !important;
-  }
-}
-
-/* ============================================================
-   🔵 MEMORIA VISUAL — MÓVIL (3 columnas grandes)
-   ============================================================ */
-@media (max-width: 767px) {
-  .memory-stage {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 14px !important;
-    padding: 14px !important;
-  }
-
-  .memory-item,
-  .memory-slot {
-    height: 95px !important;
-    font-size: 28px !important;
-  }
-}
-
-/* ============================================================
-   🟡 CARTAS CLÁSICAS — PC (6 columnas mínimas)
-   ============================================================ */
-@media (min-width: 768px) {
-  .memory-grid {
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 18px !important;
-    justify-content: center !important;
-  }
-}
-
-/* ============================================================
-   🟢 CARTAS CLÁSICAS — MÓVIL (3 columnas grandes reales)
-   ============================================================ */
-@media (max-width: 767px) {
-  .memory-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 14px !important;
-    padding: 0 10px !important;
-    width: 100% !important;
-  }
-
-  .memory-card {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
-    font-size: 50px !important;
-  }
-}
-
-/* ============================================================
-   FIX EXTRA — EVITAR ESPACIOS LATERALES INNECESARIOS
-   ============================================================ */
-@media (max-width: 767px) {
-  body, html {
-    overflow-x: hidden !important;
-  }
-
-  .page-wrapper {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
+</body>
+</html>
