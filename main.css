@@ -1463,17 +1463,21 @@ html, body {
     0 0 28px rgba(0, 224, 255, 0.4);
 }
 
+
 /* ===============================
-   FIX TAMAÑO REAL JUEGOS EN MÓVIL
+   FIX REAL TAMAÑO JUEGOS EN MÓVIL
    =============================== */
 
 @media (max-width: 600px) {
 
-  .games-modal {
+  .memory-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .memory-card {
     width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    padding: 16px;
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 
 }
