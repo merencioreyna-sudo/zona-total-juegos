@@ -437,7 +437,7 @@ html, body {
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 20px;
-  max-width: 420px;
+  
 
   padding: 16px;          /* 👈 espacio interno */
   box-sizing: border-box; /* asegura que no se rompa */
@@ -519,7 +519,7 @@ html, body {
 .memory-stage {
   margin: 32px auto;     /* 👈 más aire vertical */
   width: calc(100% - 32px); /* 👈 separación lateral */
-  max-width: 420px;
+ 
 
   min-height: 280px;
   background: #333;
@@ -945,7 +945,7 @@ html, body {
 /* TABLERO */
 .memory-grid {
   display: grid;
-  grid-template-columns: repeat(3, 90px);
+  
   gap: 14px;
   justify-content: center;
   margin-top: 40px;
@@ -954,7 +954,7 @@ html, body {
 /* Desktop */
 @media (min-width: 768px) {
   .memory-grid {
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(6, 100px);
     gap: 18px;
   }
 }
@@ -962,8 +962,7 @@ html, body {
 
 /* CARTA */
 .memory-card {
-  width: 90px;
-  height: 120px;
+  
   perspective: 1200px;
   cursor: pointer;
 }
@@ -1489,6 +1488,7 @@ html, body {
   }
 
 }
+
 
 
 
