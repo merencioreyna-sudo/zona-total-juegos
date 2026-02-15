@@ -318,6 +318,51 @@ h2 {
   word-break: break-word;
 }
 
+/* ================= TRIVIA RÁPIDA - AJUSTE SOLO PARA MÓVIL ================= */
+@media (max-width: 480px) {
+  .game-wrapper {
+    padding: 0.5rem;
+    min-height: auto;
+  }
+  
+  .trivia-game {
+    max-width: 100% !important;
+    width: 100%;
+    padding: 2rem 1.2rem;
+    border-radius: 24px;
+    min-height: 450px;
+  }
+  
+  .trivia-question p {
+    font-size: 1.5rem !important;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  
+  .trivia-answers {
+    gap: 1rem;
+  }
+  
+  .trivia-answers button {
+    padding: 1.2rem 1rem;
+    font-size: 1.2rem !important;
+    min-height: 70px;
+  }
+  
+  .trivia-next,
+  .trivia-restart {
+    max-width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .game-wrapper p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* ================= JUEGOS - MEMORIA VISUAL ================= */
 .memoria-visual-container {
   width: 100%;
@@ -680,3 +725,4 @@ h2 {
     transform: none;
   }
 }
+
