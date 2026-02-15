@@ -1473,6 +1473,17 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+
+  .trivia-game,
+  .memory-stage,
+  .cards-board {
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
+
 
 
 
