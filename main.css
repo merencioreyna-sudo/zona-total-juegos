@@ -970,3 +970,36 @@ p {
   }
 }
 
+/* ===============================
+   GAMES SECTION (CORREGIDO)
+   =============================== */
+.games-section {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.games-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 1023px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+}
