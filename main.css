@@ -1003,4 +1003,96 @@ p {
   }
 }
 
+/* ===============================
+   AGE FILTER - CORREGIDO
+   =============================== */
+.age-filter {
+  margin: 5rem auto;  /* Aumentado el margen vertical */
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;  /* Padding interno para darle cuerpo */
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo sutil en el borde */
+.age-filter::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--primary), 
+    var(--accent), 
+    var(--secondary), 
+    var(--primary));
+  border-radius: var(--radius-lg);
+  opacity: 0.3;
+  z-index: -1;
+  animation: rotate 8s linear infinite;
+}
+
+/* Efecto de destello interno */
+.age-filter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.age-filter h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem; /* Un poco más pequeño */
+  position: relative;
+  display: inline-block;
+}
+
+/* Línea decorativa debajo del título */
+.age-filter h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: var(--radius-full);
+}
+
+.age-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste responsive para móvil */
+@media screen and (max-width: 600px) {
+  .age-filter {
+    margin: 3rem auto;
+    padding: 1.5rem;
+  }
+  
+  .age-filter h2 {
+    font-size: 1.5rem;
+  }
+  
+  .age-buttons {
+    gap: 1rem;
+  }
+}
 
