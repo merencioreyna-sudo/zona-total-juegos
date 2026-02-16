@@ -112,10 +112,10 @@ p {
    =============================== */
 .btn-primary, .btn-secondary {
   display: inline-block;
-  padding: 0.875rem 2rem;
+  padding: 0.8rem 1rem;
   font-family: var(--font-main);
   font-weight: 600;
-  font-size: 1rem;
+  
   text-decoration: none;
   border: none;
   border-radius: var(--radius-full);
@@ -1095,5 +1095,6 @@ p {
     gap: 1rem;
   }
 }
+
 
 
