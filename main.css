@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(135deg, var(--light) 0%, var(--primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1095,6 +1095,7 @@ p {
     gap: 1rem;
   }
 }
+
 
 
 
