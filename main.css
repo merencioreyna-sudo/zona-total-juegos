@@ -379,7 +379,7 @@ p {
 
 .challenge, .final-cta {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 6px 2px;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
   position: relative;
@@ -1095,6 +1095,7 @@ p {
     gap: 1rem;
   }
 }
+
 
 
 
