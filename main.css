@@ -1010,7 +1010,7 @@ p {
   margin: 5rem auto;  /* Aumentado el margen vertical */
   text-align: center;
   max-width: 800px;
-  padding: 2rem;  /* Padding interno para darle cuerpo */
+  padding: 0.5rem;  /* Padding interno para darle cuerpo */
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1095,4 +1095,5 @@ p {
     gap: 1rem;
   }
 }
+
 
