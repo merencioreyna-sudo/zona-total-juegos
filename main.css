@@ -178,7 +178,6 @@ p {
    HERO SECTION
    =============================== */
 .hero {
-  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1003,3 +1002,4 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
