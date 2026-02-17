@@ -451,7 +451,7 @@ p {
 }
 
 /* ===============================
-   AGE FILTER
+   AGE FILTER - CON FONDO Y BOTONES ORIGINALES
    =============================== */
 .age-filter {
   margin: 5rem auto;
@@ -518,13 +518,40 @@ p {
   border-radius: var(--radius-full);
 }
 
+/* BOTONES RESTAURADOS A SU ESTILO ORIGINAL */
 .age-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+}
+
+.age-btn {
+  padding: 0.75rem 2rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--light);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.age-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+
+.age-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
 }
 
 /* ===============================
@@ -1181,7 +1208,12 @@ p {
   }
   
   .age-buttons {
-    gap: 1rem;
+    gap: 0.8rem;
+  }
+  
+  .age-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1305,4 +1337,3 @@ p {
     display: none !important;
   }
 }
-
