@@ -1326,7 +1326,7 @@ p {
 /* Efecto de silueta gamer - AQUÍ PUEDES PONER TU IMAGEN */
 .hero-character {
   /* Cuando tengas la imagen, reemplaza esto con: */
-   background: url(https://github.com/merencioreyna-sudo/zona-total-juegos/blob/main/assets/banner.png?raw=true) no-repeat bottom right; 
+   background: url('https://github.com/merencioreyna-sudo/zona-total-juegos/blob/main/assets/banner.png?raw=true') no-repeat bottom right; 
   /* background-size: contain; */
   
   /* Por ahora usamos un gradiente que simula una silueta */
@@ -1587,6 +1587,7 @@ p {
     font-size: 1.5rem;
   }
 }
+
 
 
 
