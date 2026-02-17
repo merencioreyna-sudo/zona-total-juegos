@@ -1287,6 +1287,306 @@ p {
   }
 }
 
+/* ===============================
+   HERO - ESTILO GAMER
+   =============================== */
+.hero {
+  position: relative;
+  min-height: 90vh; /* Reducido de 70vh a 90vh (estaba muy grande) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--darker) 0%, #1a1f35 100%);
+}
+
+/* Imagen de fondo con personaje gamer */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.hero-character {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.3) 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Efecto de silueta gamer - AQUÍ PUEDES PONER TU IMAGEN */
+.hero-character {
+  /* Cuando tengas la imagen, reemplaza esto con: */
+  /* background: url('../images/gamer-character.png') no-repeat bottom right; */
+  /* background-size: contain; */
+  
+  /* Por ahora usamos un gradiente que simula una silueta */
+  background: radial-gradient(circle at 70% 50%, 
+    rgba(99, 102, 241, 0.4) 0%, 
+    transparent 50%),
+    linear-gradient(135deg, 
+    transparent 0%, 
+    rgba(236, 72, 153, 0.3) 100%);
+}
+
+/* Elementos decorativos flotantes */
+.hero-decoration {
+  position: absolute;
+  font-size: 3rem;
+  z-index: 2;
+  opacity: 0.5;
+  animation: float 3s ease-in-out infinite;
+}
+
+.decoration-1 {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.decoration-2 {
+  top: 25%;
+  right: 15%;
+  animation-delay: 0.5s;
+  font-size: 4rem;
+}
+
+.decoration-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.decoration-4 {
+  bottom: 30%;
+  right: 25%;
+  animation-delay: 1.5s;
+}
+
+/* Líneas de luz decorativas */
+.hero-light {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  height: 2px;
+  width: 100%;
+  z-index: 1;
+}
+
+.light-1 {
+  top: 20%;
+  transform: rotate(-5deg);
+  animation: scan 8s linear infinite;
+}
+
+.light-2 {
+  bottom: 30%;
+  transform: rotate(3deg);
+  animation: scan 6s linear infinite reverse;
+}
+
+/* Contenido del hero */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  text-align: left;
+  padding: 2rem;
+  margin-right: auto;
+  margin-left: 5%;
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 1s ease;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff, var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+}
+
+/* Stats decorativos (como en tus capturas) */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-btn {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  animation: pulse 2s infinite;
+}
+
+/* ===============================
+   ANIMACIONES DEL HERO
+   =============================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(-5deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   HERO RESPONSIVE
+   =============================== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .hero {
+    min-height: 80vh;
+  }
+  
+  .hero-content {
+    margin-left: 2rem;
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-character {
+    width: 70%;
+  }
+  
+  .decoration-2, .decoration-4 {
+    display: none;
+  }
+}
+
+/* Móvil */
+@media screen and (max-width: 600px) {
+  .hero {
+    min-height: 70vh;
+  }
+  
+  .hero-content {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(2, 6, 23, 0.8);
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .hero-character {
+    width: 100%;
+    opacity: 0.3;
+  }
+  
+  .decoration-1, .decoration-3 {
+    font-size: 2rem;
+  }
+}
+
+/* Móvil pequeño */
+@media screen and (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
 
 
 
