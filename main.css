@@ -172,7 +172,7 @@ p {
 }
 
 /* ===============================
-   HERO SECTION
+   HERO SECTION - MODIFICADO
    =============================== */
 .hero {
   position: relative;
@@ -197,7 +197,7 @@ p {
   opacity: 0.8;
 }
 
-/* Hero character con imagen - CORREGIDO */
+/* Hero character con imagen */
 .hero-character {
   position: absolute;
   bottom: 0;
@@ -206,7 +206,6 @@ p {
   height: 100%;
   background: url('https://raw.githubusercontent.com/merencioreyna-sudo/zona-total-juegos/main/assets/banner.png') no-repeat center center;
   background-size: cover;
-  /* Eliminamos clip-path para que se vea la imagen completa */
 }
 
 /* Elementos decorativos flotantes */
@@ -264,21 +263,21 @@ p {
   animation: scan 6s linear infinite reverse;
 }
 
-/* Contenido del hero */
+/* Contenido del hero - REORGANIZADO */
 .hero-content {
   position: relative;
   z-index: 10;
   max-width: 800px;
-  text-align: left;
+  text-align: center; /* Cambiado a center para mejor presentación */
   padding: 2rem;
-  margin-right: auto;
-  margin-left: 5%;
+  margin: 0 auto; /* Centrado horizontal */
   background: rgba(2, 6, 23, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   animation: slideIn 1s ease;
+  margin-top: 20%; /* Separación de la imagen */
 }
 
 .hero-tagline {
@@ -292,7 +291,7 @@ p {
 
 .hero-content h1 {
   font-size: 5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem; /* Espacio antes del subtítulo */
   background: linear-gradient(135deg, #fff, var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -303,24 +302,28 @@ p {
   letter-spacing: -2px;
 }
 
+/* Subtítulo - AHORA ARRIBA DE LAS STATS */
 .hero-subtitle {
   font-size: 1.3rem;
   color: var(--gray);
-  margin-bottom: 2rem;
-  border-left: 4px solid var(--primary);
-  padding-left: 1rem;
+  margin-bottom: 2rem; /* Espacio antes de las stats */
+  border-left: none; /* Quitamos la línea izquierda */
+  padding-left: 0;
+  text-align: center;
 }
 
-/* Stats decorativos */
+/* Stats decorativos - AHORA DEBAJO DEL SUBTÍTULO */
 .hero-stats {
   display: flex;
   gap: 2rem;
-  margin-bottom: 2rem;
+  justify-content: center; /* Centrado */
+  margin-bottom: 0; /* Quitamos margen inferior */
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centrado horizontal */
 }
 
 .stat-value {
@@ -338,12 +341,92 @@ p {
   color: var(--gray);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 0.2rem;
 }
 
 .hero-btn {
   font-size: 1.2rem;
   padding: 1rem 3rem;
   animation: pulse 2s infinite;
+  margin-top: 2rem;
+}
+
+/* ===============================
+   MEDIA QUERIES - RESPONSIVE
+   =============================== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    margin: 15% 1rem 1rem 1rem;
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-character {
+    width: 70%;
+  }
+  
+  .decoration-2, .decoration-4 {
+    display: none;
+  }
+}
+
+/* Móvil */
+@media screen and (max-width: 600px) {
+  .hero {
+    min-height: 70vh;
+  }
+  
+  .hero-content {
+    margin: 10% 1rem 1rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .hero-character {
+    width: 100%;
+    opacity: 0.3;
+  }
+  
+  .decoration-1, .decoration-3 {
+    font-size: 2rem;
+  }
+}
+
+/* Móvil pequeño */
+@media screen and (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    gap: 0.8rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
 }
 
 /* ===============================
@@ -1337,3 +1420,4 @@ p {
     display: none !important;
   }
 }
+
