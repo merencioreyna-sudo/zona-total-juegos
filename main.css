@@ -172,7 +172,7 @@ p {
 }
 
 /* ===============================
-   HERO SECTION - SOLO IMAGEN
+   HERO SECTION - CON ILUMINACIÓN AZUL
    =============================== */
 .hero {
   position: relative;
@@ -181,7 +181,7 @@ p {
   margin-bottom: 4rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(135deg, var(--darker) 0%, #1a1f35 100%);
+  /* ELIMINADO el fondo negro */
 }
 
 /* Imagen de fondo con personaje gamer */
@@ -194,7 +194,7 @@ p {
   z-index: 0;
 }
 
-/* Hero character con imagen - SIN BORDES */
+/* Hero character con imagen - CON ILUMINACIÓN AZUL */
 .hero-character {
   position: absolute;
   top: 0;
@@ -203,15 +203,33 @@ p {
   height: 100%;
   background: url('https://raw.githubusercontent.com/merencioreyna-sudo/zona-total-juegos/main/assets/banner.png') no-repeat center center;
   background-size: cover;
+  box-shadow: inset 0 0 50px rgba(99, 102, 241, 0.5),
+              0 0 30px rgba(99, 102, 241, 0.5);
 }
 
-/* Elementos decorativos flotantes */
+/* ILUMINACIÓN AZUL EXTERNA */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 60px rgba(99, 102, 241, 0.7),
+              0 0 40px rgba(99, 102, 241, 0.7);
+  pointer-events: none;
+  z-index: 3;
+  border-radius: var(--radius-lg);
+}
+
+/* Elementos decorativos flotantes (opcionales, los dejo por si quieres) */
 .hero-decoration {
   position: absolute;
   font-size: 3rem;
   z-index: 2;
   opacity: 0.5;
   animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.8));
 }
 
 .decoration-1 {
@@ -1256,4 +1274,5 @@ p {
     display: none !important;
   }
 }
+
 
