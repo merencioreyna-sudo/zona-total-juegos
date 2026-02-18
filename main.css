@@ -176,12 +176,13 @@ p {
    =============================== */
 .hero {
   position: relative;
+  width: 100%;
   min-height: 90vh;
   display: flex;
   margin-bottom: 4rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  /* ELIMINADO el fondo negro */
+  background: transparent; /* Fondo transparente */
 }
 
 /* Imagen de fondo con personaje gamer */
@@ -222,7 +223,7 @@ p {
   border-radius: var(--radius-lg);
 }
 
-/* Elementos decorativos flotantes (opcionales, los dejo por si quieres) */
+/* Elementos decorativos flotantes */
 .hero-decoration {
   position: absolute;
   font-size: 3rem;
@@ -289,6 +290,42 @@ p {
 .stat-label,
 .hero-btn {
   display: none;
+}
+
+/* ===============================
+   HERO RESPONSIVE - SOLO IMAGEN SIN FONDO
+   =============================== */
+@media screen and (max-width: 600px) {
+  .hero {
+    min-height: 50vh; /* Altura reducida para móvil */
+    background: transparent;
+  }
+  
+  .hero-character {
+    background-size: cover; /* Mantiene cover para que cubra todo */
+    background-position: center center;
+  }
+  
+  /* Ajustamos decoraciones para móvil */
+  .decoration-1, .decoration-3 {
+    font-size: 2rem;
+    opacity: 0.3;
+  }
+  
+  .decoration-2, .decoration-4 {
+    display: none;
+  }
+  
+  .hero-light {
+    opacity: 0.5;
+  }
+}
+
+/* Móvil pequeño */
+@media screen and (max-width: 380px) {
+  .hero {
+    min-height: 40vh;
+  }
 }
 /* ===============================
    GAME CARDS
@@ -1274,5 +1311,6 @@ p {
     display: none !important;
   }
 }
+
 
 
