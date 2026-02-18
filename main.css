@@ -172,15 +172,12 @@ p {
 }
 
 /* ===============================
-   HERO SECTION - CORREGIDO
+   HERO SECTION - SOLO IMAGEN
    =============================== */
 .hero {
   position: relative;
   min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
   margin-bottom: 4rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -197,7 +194,7 @@ p {
   z-index: 0;
 }
 
-/* Hero character con imagen - SIN BORDES FEOS */
+/* Hero character con imagen - SIN BORDES */
 .hero-character {
   position: absolute;
   top: 0;
@@ -263,67 +260,18 @@ p {
   animation: scan 6s linear infinite reverse;
 }
 
-/* Contenido del hero - SOLO LO QUE PEDISTE */
-.hero-content {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  padding: 2rem;
-  margin: 0 auto 3rem auto;
-  background: rgba(2, 6, 23, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-lg);
-}
-
-.hero-tagline, 
-.hero-content h1, 
+/* ELIMINADO TODO EL CONTENIDO DE TEXTO */
+.hero-content,
+.hero-tagline,
+.hero-content h1,
+.hero-subtitle,
+.hero-stats,
+.stat-item,
+.stat-value,
+.stat-label,
 .hero-btn {
   display: none;
 }
-
-/* Subtítulo - LO QUE PEDISTE */
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Stats decorativos - LO QUE PEDISTE */
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-value {
-  font-size: 2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 1rem;
-  color: var(--gray);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 0.3rem;
-}
-
 /* ===============================
    GAME CARDS
    =============================== */
@@ -1308,3 +1256,4 @@ p {
     display: none !important;
   }
 }
+
