@@ -738,11 +738,12 @@ p {
 }
 
 .trivia-explanation {
-  padding: 1.5rem;
+  padding: 1.1rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   margin: 1.5rem 0;
   border-left: 4px solid var(--primary);
+  font-size: 30px;
 }
 
 .trivia-next, .trivia-restart {
@@ -1311,6 +1312,7 @@ p {
     display: none !important;
   }
 }
+
 
 
 
