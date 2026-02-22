@@ -1309,16 +1309,7 @@ font-size: 45px;
    SOLO CENTRAR TÍTULO DE TRIVIA RÁPIDA EN PC
    =============================== */
 @media screen and (min-width: 1024px) {
-  body:has(.trivia-game) .trivia-game h1 {
-    text-align: center !important;
-    width: 100% !important;
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-  
-  body:has(.trivia-game) .trivia-game {
+   body:has(.trivia-game) .trivia-game {
     max-width: 700px !important;
     width: 90% !important;
     margin: 0 auto !important;
@@ -1374,6 +1365,7 @@ font-size: 45px;
     text-align: center !important;
   }
 }
+
 
 
 
