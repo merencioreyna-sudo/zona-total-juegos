@@ -838,11 +838,11 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  font-size: 2rem;
+  font-size: 3.8rem;
 }
 
 .card-front {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), #e54646);
   color: white;
 }
 
@@ -984,7 +984,8 @@ p {
   }
   
   h1 {
-    font-size: 3.0rem;
+    font-size: 2.8rem;
+    text-align: center;
   }
   
   h2 {
@@ -1299,6 +1300,7 @@ p {
 font-size: 45px;
 text-align: center;
 }
+
 
 
 
