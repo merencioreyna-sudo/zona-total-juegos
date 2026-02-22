@@ -1396,6 +1396,98 @@ button.cards-start:hover {
 }
 
 
+/* ===============================
+   MODAL DE JUEGOS EXTERNOS - REDISEÑO
+   =============================== */
+.games-modal-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.external-game {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.external-game::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.external-game:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.external-game:hover::before {
+  left: 100%;
+}
+
+/* Títulos decorativos dentro de las tarjetas */
+.external-game::after {
+  content: '🎮';
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Diferentes emojis para cada tarjeta (opcional - se puede personalizar por JS) */
+.external-game:nth-child(1)::after {
+  content: '🏎️';
+}
+
+.external-game:nth-child(2)::after {
+  content: '🥊';
+}
+
+.external-game:nth-child(3)::after {
+  content: '⚡';
+}
+
+/* Responsive del modal */
+@media screen and (max-width: 600px) {
+  .games-modal-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .external-game {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .games-modal-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .external-game:last-child {
+    grid-column: span 2;
+  }
+}
 
 
 
