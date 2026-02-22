@@ -1575,7 +1575,7 @@ button.cards-start:hover {
 
 @media screen and (max-width: 600px) {
   .games-modal {
-    padding: 1.5rem;
+    padding: 0.9rem;
   }
   
   .games-modal-content {
@@ -1604,6 +1604,7 @@ button.cards-start:hover {
     grid-column: span 2;
   }
 }
+
 
 
 
