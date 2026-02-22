@@ -1374,9 +1374,9 @@ button.cards-start {
   color: white !important;
   border: none !important;
   border-radius: 999px !important;
-  padding: 1rem 3rem !important;
+  padding: 1rem 2rem !important;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 1.2rem !important;
+  font-size: 1.7rem !important;
   font-weight: 600 !important;
   cursor: pointer !important;
   text-transform: uppercase !important;
@@ -1394,6 +1394,7 @@ button.cards-start:hover {
   transform: translateY(-2px) scale(1.05) !important;
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.5) !important;
 }
+
 
 
 
