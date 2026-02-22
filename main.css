@@ -1166,7 +1166,7 @@ p {
   
   .age-filter {
     margin: 3rem auto;
-    padding: 1.5rem;
+    
   }
   
   .age-filter h2 {
@@ -1594,6 +1594,7 @@ button.cards-start:hover {
     grid-column: span 2;
   }
 }
+
 
 
 
