@@ -1306,47 +1306,100 @@ font-size: 45px;
 }
 
 /* ===============================
-   AJUSTES PARA TRIVIA RÁPIDA EN PC
+   AJUSTES PARA TRIVIA RÁPIDA EN PC - CORREGIDO
    =============================== */
 @media screen and (min-width: 1024px) {
+  /* Contenedor principal de la trivia */
   body:has(.trivia-game) {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    height: 100vh;
+    overflow: hidden; /* Elimina scroll del body */
     margin: 0;
     padding: 0;
   }
   
   body:has(.trivia-game) .page-wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
+    height: auto;
+    max-height: 90vh; /* Limita la altura */
     margin: 0 auto;
     padding: 1rem;
+    overflow-y: auto; /* Scroll solo si es necesario */
   }
   
+  /* El contenedor del juego */
+  body:has(.trivia-game) .game-wrapper {
+    min-height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* La caja de trivia */
   .trivia-game {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
   }
   
+  /* Título más pequeño */
+  .trivia-game h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Progreso */
   .trivia-progress {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
   
+  /* Pregunta */
   .trivia-question {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  
+  /* Respuestas en grid más compacto */
+  .trivia-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
   }
   
   .trivia-answers button {
-    font-size: 1.5rem;
-    padding: 1rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    text-align: center;
   }
   
+  /* Explicación */
   .trivia-explanation {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  /* Botones */
+  .trivia-next, .trivia-restart {
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Mensaje de fin */
+  .trivia-game p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
   }
 }
 
