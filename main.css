@@ -1453,8 +1453,9 @@ button.cards-start:hover {
 .games-modal-header {
   display: flex;
   justify-content: flex-end;
-  
   position: relative;
+  padding-right: 15px;
+  padding-top: 15px;
 }
 
 .games-modal-header::after {
@@ -1530,21 +1531,7 @@ button.cards-start:hover {
 }
 
 .external-game::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: rotate(45deg);
-  transition: transform 0.6s;
-  opacity: 0;
-}
-
-.external-game:hover::before {
-  opacity: 1;
-  transform: rotate(45deg) translate(50%, 50%);
+  display: none !important;
 }
 
 .external-game::after {
