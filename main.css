@@ -1367,35 +1367,32 @@ font-size: 45px;
 }
 
 /* ===============================
-   AJUSTES BOTÓN EMPEZAR - CARTAS CLÁSICAS
+   ESTILO PARA BOTÓN EMPEZAR - CARTAS CLÁSICAS
    =============================== */
-.cards-start {
-  text-align: center !important;
-  margin: 2rem auto !important;
-  width: 100% !important;
-}
-
 .cards-start button {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
   color: white !important;
   border: none !important;
-  border-radius: var(--radius-full) !important;
+  border-radius: 999px !important;
   padding: 1rem 3rem !important;
-  font-family: var(--font-main) !important;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1.2rem !important;
   font-weight: 600 !important;
   cursor: pointer !important;
-  transition: all var(--transition-base) !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
-  display: inline-block !important;
-  width: auto !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  margin: 2rem auto !important;
+  width: fit-content !important;
   min-width: 200px !important;
+  text-align: center !important;
 }
 
 .cards-start button:hover {
   transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: var(--shadow-glow) !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5) !important;
 }
 
 
