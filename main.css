@@ -1306,17 +1306,17 @@ font-size: 45px;
 }
 
 /* ===============================
-   AJUSTES SOLO PARA TRIVIA RÁPIDA EN PC
+   SOLO CENTRAR TÍTULO DE TRIVIA RÁPIDA EN PC
    =============================== */
 @media screen and (min-width: 1024px) {
-  /* Selector específico para Trivia Rápida */
-  body:has(.trivia-game) .game-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 80vh !important;
-    padding: 0 !important;
+  body:has(.trivia-game) .trivia-game h1 {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
+}
   
   body:has(.trivia-game) .trivia-game {
     max-width: 700px !important;
@@ -1374,6 +1374,7 @@ font-size: 45px;
     text-align: center !important;
   }
 }
+
 
 
 
