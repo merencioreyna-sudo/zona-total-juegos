@@ -679,7 +679,7 @@ p {
 
 /* Trivia Rápida */
 .trivia-game {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -1349,6 +1349,7 @@ font-size: 45px;
     padding: 1rem;
   }
 }
+
 
 
 
