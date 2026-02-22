@@ -1366,6 +1366,37 @@ font-size: 45px;
   }
 }
 
+/* ===============================
+   AJUSTES BOTÓN EMPEZAR - CARTAS CLÁSICAS
+   =============================== */
+.cards-start {
+  text-align: center !important;
+  margin: 2rem auto !important;
+  width: 100% !important;
+}
+
+.cards-start button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--radius-full) !important;
+  padding: 1rem 3rem !important;
+  font-family: var(--font-main) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all var(--transition-base) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 200px !important;
+}
+
+.cards-start button:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: var(--shadow-glow) !important;
+}
 
 
 
