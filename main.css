@@ -779,10 +779,10 @@ p {
 
 .memory-card {
   aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), #d746e5);
   border: none;
   border-radius: var(--radius-md);
-  font-size: 2rem;
+  font-size: 5rem;
   cursor: pointer;
   transition: all var(--transition-base);
   display: flex;
@@ -1294,6 +1294,9 @@ p {
   }
 }
 
+.game-wrapper p{
+font-size: 30px;
+}
 
 
 
