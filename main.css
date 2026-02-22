@@ -1306,10 +1306,9 @@ font-size: 45px;
 }
 
 /* ===============================
-   AJUSTES PARA TRIVIA RÁPIDA EN PC - VERSIÓN DIRECTA
+   AJUSTES PARA TRIVIA RÁPIDA EN PC - TÍTULO CENTRADO
    =============================== */
 @media screen and (min-width: 1024px) {
-  /* Ajustes directos al contenedor de trivia */
   .game-wrapper {
     display: flex !important;
     align-items: center !important;
@@ -1323,11 +1322,15 @@ font-size: 45px;
     width: 90% !important;
     margin: 0 auto !important;
     padding: 1.5rem !important;
-    transform: scale(0.9); /* Escala ligeramente hacia abajo */
   }
   
-  /* Reducir tamaños */
+  /* Título centrado */
   .trivia-game h1 {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     font-size: 2rem !important;
     margin-bottom: 0.5rem !important;
   }
@@ -1335,12 +1338,14 @@ font-size: 45px;
   .trivia-progress {
     font-size: 1.1rem !important;
     margin-bottom: 0.8rem !important;
+    text-align: center !important;
   }
   
   .trivia-question {
     font-size: 1.3rem !important;
     margin-bottom: 1rem !important;
     line-height: 1.3 !important;
+    text-align: center !important;
   }
   
   .trivia-answers {
@@ -1351,18 +1356,21 @@ font-size: 45px;
   .trivia-answers button {
     font-size: 1.1rem !important;
     padding: 0.7rem !important;
+    text-align: center !important;
   }
   
   .trivia-explanation {
     font-size: 0.95rem !important;
     padding: 0.8rem !important;
     margin: 0.8rem 0 !important;
+    text-align: center !important;
   }
   
   .trivia-next, .trivia-restart {
     font-size: 1rem !important;
     padding: 0.7rem !important;
     margin-top: 0.5rem !important;
+    text-align: center !important;
   }
 }
 
