@@ -751,7 +751,7 @@ p {
   width: 100%;
   padding: 1rem;
   font-family: var(--font-main);
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-weight: 600;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border: none;
@@ -1312,6 +1312,7 @@ p {
     display: none !important;
   }
 }
+
 
 
 
