@@ -1305,6 +1305,52 @@ text-align: center;
 font-size: 45px;
 }
 
+/* ===============================
+   AJUSTES PARA TRIVIA RÁPIDA EN PC
+   =============================== */
+@media screen and (min-width: 1024px) {
+  body:has(.trivia-game) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body:has(.trivia-game) .page-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .trivia-game {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+  .trivia-progress {
+    font-size: 1.8rem;
+  }
+  
+  .trivia-question {
+    font-size: 1.8rem;
+  }
+  
+  .trivia-answers button {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .trivia-explanation {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+
 
 
 
