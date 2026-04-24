@@ -6,9 +6,19 @@
   <title>Zona Total Juegos</title>
 
   <!-- CSS principal -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+
+<div class="top-bar">
+
+  <div class="logo-circle">ZT</div>
+
+  <button class="btn-home" onclick="window.location.href='https://merencioreyna-sudo.github.io/zona-total-peliculas/'">
+    🏠 Inicio
+  </button>
+
+</div>
 
 <div class="page-wrapper">
 	
@@ -62,17 +72,17 @@
     <h2>Juegos destacados</h2>
 
     <div class="featured-grid">
-      <article class="game-card featured">
+      <article class="game-card featured game-trivia">
         <h3>Trivia Rápida</h3>
         <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
       </article>
 
-      <article class="game-card featured">
+      <article class="game-card featured game-carreras">
         <h3>Carreras Arcade</h3>
         <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
       </article>
 
-      <article class="game-card featured">
+      <article class="game-card featured game-memoria">
         <h3>Memoria Visual</h3>
         <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
       </article>
@@ -94,37 +104,37 @@
   <h2>Todos los juegos</h2>
   
   <main class="games-grid">
-    <article class="game-card">
+    <article class="game-card game-trivia">
       <h3>Trivia Rápida</h3>
       <span class="badge">Adolescentes</span>
       <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
     </article>
 
-    <article class="game-card">
+    <article class="game-card game-cartas">
       <h3>Cartas Clásicas</h3>
       <span class="badge">Para Todos</span>
       <button class="btn-secondary" data-game="cartas-clasicas">Jugar</button>
     </article>
 
-    <article class="game-card">
+    <article class="game-card game-carreras">
       <h3>Carreras Arcade</h3>
       <span class="badge">Adolescentes</span>
       <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
     </article>
 
-    <article class="game-card">
+    <article class="game-card game-combate">
       <h3>Combate Ligero</h3>
       <span class="badge">Adolescentes</span>
       <button class="btn-secondary" data-game="combate-ligero">Jugar</button>
     </article>
 
-    <article class="game-card">
+    <article class="game-card game-memoria">
       <h3>Memoria Visual</h3>
       <span class="badge">Para Todos</span>
       <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
     </article>
 
-    <article class="game-card">
+    <article class="game-card game-reflejos">
       <h3>Juego de Reflejos</h3>
       <span class="badge">Para Todos</span>
       <button class="btn-secondary" data-game="juego-reflejos">Jugar</button>
@@ -133,6 +143,7 @@
 </section>
 
   <!-- FOOTER -->
+</div>
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-info">
@@ -149,19 +160,15 @@
     </div>
     
     <div class="footer-copyright">
-      <p>&copy; 2024 Zona Total Juegos. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Zona Total Juegos. Todos los derechos reservados.</p>
       <p class="footer-made">Hecho con ❤️ para jugadores</p>
     </div>
   </div>
 </footer>
 
   <!-- JS principal -->
-  <script src="main.js"></script>
+  <script src="scripts/main.js"></script>
   
-
-</div>
-
-
 
 <!-- VENTANA JUEGOS EXTERNOS -->
 <div id="games-modal-overlay" hidden>
@@ -184,9 +191,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
