@@ -58,7 +58,9 @@
 
 body {
   font-family: var(--font-main);
-  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  background:
+  linear-gradient(rgba(2,6,23,0.35), rgba(2,6,23,0.35)),
+  url('https://tse3.mm.bing.net/th/id/OIP.JQoFszWucLtqQ2nLlQmisQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') center / cover no-repeat fixed;
   color: var(--light);
   line-height: 1.5;
   min-height: 100vh;
@@ -137,9 +139,9 @@ p {
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, #ff0000, #7f0000);
   color: white;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.8);
 }
 
 .btn-secondary:hover {
@@ -180,7 +182,7 @@ p {
   width: 100%;
   min-height: 90vh;
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: transparent; /* Fondo transparente */
@@ -393,7 +395,7 @@ p {
 .game-card .badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, #007bff, #001f99);
   border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 600;
@@ -440,7 +442,9 @@ p {
   text-align: center;
   max-width: 800px;
   padding: 0.5rem;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+
+  background: url('https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg') center/cover no-repeat;
+
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -448,6 +452,20 @@ p {
   position: relative;
   overflow: hidden;
 }
+
+.age-filter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: inherit;
+}
+
+.age-filter * {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* Efecto de brillo sutil en el borde */
 .age-filter::before {
@@ -525,9 +543,9 @@ p {
 }
 
 .age-btn.active {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border-color: transparent;
-  box-shadow: var(--shadow-glow);
+  background: linear-gradient(135deg, #0066ff, #0033cc);
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 18px rgba(0, 102, 255, 0.8);
 }
 
 .age-btn:hover {
@@ -560,7 +578,7 @@ p {
    FOOTER
    =============================== */
 .site-footer {
-  margin-top: 5rem;
+  margin-top: 0rem;
   padding: 1rem 1.5rem;
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1166,7 +1184,7 @@ p {
   
   .age-filter {
     margin: 3rem auto;
-    
+    padding: 1.5rem;
   }
   
   .age-filter h2 {
@@ -1296,9 +1314,9 @@ p {
   }
 }
 
-.game-wrapper p{
-font-size: 45px;
-text-align: center;
+.game-wrapper p {
+  font-size: 1rem;
+  text-align: center;
 }
 
 .cards-start button{
@@ -1596,14 +1614,304 @@ button.cards-start:hover {
 }
 
 
+/* 🔧 AJUSTE GENERAL DE TAMAÑO EN JUEGOS */
+
+.trivia-question {
+  font-size: 1.3rem;
+}
+
+.trivia-answers button {
+  font-size: 1.1rem;
+}
+
+.trivia-next,
+.trivia-restart {
+  font-size: 1rem;
+}
+
+.trivia-progress {
+  font-size: 1.1rem;
+}
+
+.memory-card {
+  font-size: 2rem;
+}
+
+button.cards-start {
+  font-size: 1rem !important;
+}
+
+/* 📱 TRIVIA EN MÓVIL: 2 COLUMNAS */
+@media screen and (max-width: 600px) {
+  .trivia-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+/* 📱 CENTRAR TEXTO EN JUEGOS (MÓVIL) */
+@media screen and (max-width: 600px) {
+
+  .trivia-question {
+    text-align: center;
+  }
+
+  .trivia-answers button {
+    text-align: center;
+  }
+
+}
+
+.btn-back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+
+  padding: 10px 15px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 📱 AJUSTE SOLO EN MÓVIL */
+@media screen and (max-width: 600px) {
+  .btn-back {
+    position: static;
+    display: block;
+    margin: 15px auto;
+  }
+}
+
+/* 🏠 BOTÓN INICIO */
+.btn-home {
+  display: block;
+  margin: 8px 15px 0px auto;
+
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 📱 MÓVIL */
+@media screen and (max-width: 600px) {
+  .btn-home {
+    position: static;
+    display: block;
+   
+  }
+}
+
+.hero {
+  margin-top: 0;
+}
+
+.page-wrapper {
+  padding-top: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .btn-home {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn-home {
+    margin-top: 4px;
+  }
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 15px;
+}
+
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 1px;
+
+  /* 🔥 EFECTO 3D REALISTA (SUAVE, NO DUPLICADO) */
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.3),   /* base */
+    0 8px 16px rgba(0,0,0,0.4),  /* profundidad */
+    0 0 8px rgba(99,102,241,0.4); /* glow azul */
+
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.logo-circle:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow:
+    0 8px 12px rgba(0,0,0,0.4),
+    0 16px 25px rgba(0,0,0,0.6),
+    0 0 12px rgba(99,102,241,0.6);
+}
+
+.game-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.1)
+  );
+
+  z-index: 0;
+}
+
+.game-card h3,
+.game-card .badge,
+.game-card .btn-secondary {
+  position: relative;
+  z-index: 1;
+}
+
+.game-card {
+  background: linear-gradient(145deg, #1e1b4b, #0f172a);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.game-card {
+  background: radial-gradient(circle at top, #6366f1, #0f172a);
+}
+
+.game-card {
+  background: radial-gradient(circle at 30% 20%, #818cf8, #1e1b4b 40%, #020617 100%);
+}
+
+.game-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.4), transparent 60%);
+  opacity: 0.5;
+}
+
+.game-trivia {
+  background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
+}
+
+.game-trivia {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.game-trivia {
+  background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
+}
+
+.game-trivia,
+.game-cartas,
+.game-carreras,
+.game-combate,
+.game-memoria,
+.game-reflejos {
+  background-position: top center;
+}
+
+.game-cartas {
+  background: url('https://tse3.mm.bing.net/th/id/OIP.RaoeMi8cQ_Uas9esTzTucAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
+}
+
+.game-memoria {
+  background: url('https://tse2.mm.bing.net/th/id/OIP.GJI8rZm281sPuRGW3fXQ3wHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
+}
+
+.game-carreras {
+  background: url('https://www.gameuidatabase.com/uploads/The-Crew-Motorfest11072024-022729-41605.jpg') top center / cover no-repeat;
+}
+
+.game-combate {
+  background: url('https://tse3.mm.bing.net/th/id/OIP.JEdHsy1w6fPnZAbJvCmxxgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
+}
+
+.game-reflejos {
+  background: url('https://as01.epimg.net/meristation/imagenes/2022/10/02/reportajes/1664692511_228622_1664696359_portada_normal.jpg') top center / cover no-repeat;
+}
 
 
+.featured.game-trivia {
+  background: url('https://tse2.mm.bing.net/th/id/OIP.GGgok5Mx5-HErIi2l8R1PgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
+}
 
+.featured.game-carreras {
+  background: url('https://tse2.mm.bing.net/th/id/OIP.0kFBTd08BfjDkUJp9nJU6QHaDt?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
+}
 
+.featured.game-memoria {
+  background: url('https://i.ytimg.com/vi/e1RSQGvVhOo/maxresdefault.jpg') top center / cover no-repeat;
+}
 
+.game-card h3 {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
 
+.game-card h3 {
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 1),
+    0 0 20px rgba(255, 0, 0, 0.9);
+}
 
+.games-section h2 {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 1),
+    0 0 20px rgba(255, 0, 0, 0.9);
+}
 
+.age-filter h2 {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 1),
+    0 0 20px rgba(255, 0, 0, 0.9);
+}
 
-
-
+.featured-games h2 {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 1),
+    0 0 20px rgba(255, 0, 0, 0.9);
+}
