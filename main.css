@@ -1,930 +1,710 @@
-/* ===============================
-   MAIN.CSS - ZONA TOTAL JUEGOS
-   Diseño Mobile-First Responsive
-   =============================== */
-
-/* ===============================
-   VARIABLES Y RESET
-   =============================== */
-:root {
-  /* Paleta de colores vibrante - temática juegos */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
-  --secondary: #f59e0b;
-  --secondary-dark: #d97706;
-  --accent: #ec4899;
-  --success: #10b981;
-  --danger: #ef4444;
-  --dark: #0f172a;
-  --darker: #020617;
-  --light: #f8fafc;
-  --gray: #94a3b8;
-  --gray-dark: #475569;
-  
-  /* Tipografía */
-  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Montserrat', var(--font-main);
-  
-  /* Sombras y efectos */
-  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.2);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.3);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.5);
-  --shadow-glow-secondary: 0 0 20px rgba(245, 158, 11, 0.5);
-  
-  /* Bordes */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --radius-full: 9999px;
-  
-  /* Transiciones */
-  --transition-fast: 150ms ease;
-  --transition-base: 300ms ease;
-  --transition-slow: 500ms ease;
-}
-
-/* Reset moderno */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Importar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
-
 body {
-  font-family: var(--font-main);
-  background:
-  linear-gradient(rgba(2,6,23,0.35), rgba(2,6,23,0.35)),
-  url('https://tse3.mm.bing.net/th/id/OIP.JQoFszWucLtqQ2nLlQmisQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') center / cover no-repeat fixed;
-  color: var(--light);
-  line-height: 1.5;
-  min-height: 100vh;
-}
-
-.page-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 1rem;
-  position: relative;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: #ffffff;
 }
 
-/* ===============================
-   TIPOGRAFÍA
-   =============================== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.2;
-  background: linear-gradient(135deg, var(--light) 0%, var(--primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-p {
-  color: #ef3232;
-   
-}
-
-/* ===============================
-   BOTONES
-   =============================== */
-.btn-primary, .btn-secondary {
-  display: inline-block;
-  padding: 0.8rem 1rem;
-  font-family: var(--font-main);
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-  color: var(--dark);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-secondary);
-}
-
-.btn-secondary {
-  background: linear-gradient(135deg, #ff0000, #7f0000);
-  color: white;
-  box-shadow: 0 0 18px rgba(255, 0, 0, 0.8);
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
-.btn-primary:active, .btn-secondary:active {
-  transform: translateY(0);
-}
-
-/* Efecto de brillo en hover */
-.btn-primary::after, .btn-secondary::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: transform var(--transition-slow);
-}
-
-.btn-primary:hover::after, .btn-secondary:hover::after {
-  transform: rotate(45deg) translate(50%, 50%);
-}
-
-/* ===============================
-   HERO SECTION - CON ILUMINACIÓN AZUL
-   =============================== */
-.hero {
-  position: relative;
+/* ========== BARRA SUPERIOR ========== */
+.top-bar {
   width: 100%;
-  min-height: 90vh;
   display: flex;
-  margin-bottom: 2rem;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: transparent; /* Fondo transparente */
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(15, 15, 26, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Imagen de fondo con personaje gamer */
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-home {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  padding: 6px 16px;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-home:hover {
+  transform: scale(1.02);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========== CATEGORÍAS (PC) ========== */
+.nav-categories {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.cat-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 30px;
+  color: #ccc;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.cat-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+  color: white;
+}
+
+.cat-btn.active {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  border-color: transparent;
+}
+
+/* ========== HERO ========== */
+.hero {
   width: 100%;
-  height: 100%;
-  z-index: 0;
+  height: 390px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Hero character con imagen - CON ILUMINACIÓN AZUL */
-.hero-character {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-image {
   width: 100%;
   height: 100%;
   background: url('https://raw.githubusercontent.com/merencioreyna-sudo/zona-total-juegos/main/assets/banner.png') no-repeat center center;
   background-size: cover;
-  box-shadow: inset 0 0 50px rgba(99, 102, 241, 0.5),
-              0 0 30px rgba(99, 102, 241, 0.5);
-}
-
-/* ILUMINACIÓN AZUL EXTERNA */
-.hero::after {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: inset 0 0 60px rgba(99, 102, 241, 0.7),
-              0 0 40px rgba(99, 102, 241, 0.7);
-  pointer-events: none;
-  z-index: 3;
-  border-radius: var(--radius-lg);
 }
 
-/* Elementos decorativos flotantes */
-.hero-decoration {
-  position: absolute;
-  font-size: 3rem;
-  z-index: 2;
-  opacity: 0.5;
-  animation: float 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.8));
+/* ========== SECCIONES ========== */
+.recent-games, .all-games {
+  padding: 0 32px;
+  margin-bottom: 48px;
 }
 
-.decoration-1 {
-  top: 15%;
-  left: 10%;
-  animation-delay: 0s;
+.recent-games {
+  margin-top: 40px;
 }
 
-.decoration-2 {
-  top: 25%;
-  right: 15%;
-  animation-delay: 0.5s;
-  font-size: 4rem;
+.recent-games h2, .all-games h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.decoration-3 {
-  bottom: 20%;
-  left: 20%;
-  animation-delay: 1s;
-}
-
-.decoration-4 {
-  bottom: 30%;
-  right: 25%;
-  animation-delay: 1.5s;
-}
-
-/* Líneas de luz decorativas */
-.hero-light {
-  position: absolute;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  height: 2px;
-  width: 100%;
-  z-index: 1;
-}
-
-.light-1 {
-  top: 20%;
-  transform: rotate(-5deg);
-  animation: scan 8s linear infinite;
-}
-
-.light-2 {
-  bottom: 30%;
-  transform: rotate(3deg);
-  animation: scan 6s linear infinite reverse;
-}
-
-/* ELIMINADO TODO EL CONTENIDO DE TEXTO */
-.hero-content,
-.hero-tagline,
-.hero-content h1,
-.hero-subtitle,
-.hero-stats,
-.stat-item,
-.stat-value,
-.stat-label,
-.hero-btn {
-  display: none;
-}
-
-/* ===============================
-   HERO RESPONSIVE - SOLO IMAGEN SIN FONDO
-   =============================== */
-@media screen and (max-width: 600px) {
-  .hero {
-    min-height: 50vh; /* Altura reducida para móvil */
-    background: transparent;
-  }
-  
-  .hero-character {
-    background-size: cover; /* Mantiene cover para que cubra todo */
-    background-position: center center;
-  }
-  
-  /* Ajustamos decoraciones para móvil */
-  .decoration-1, .decoration-3 {
-    font-size: 2rem;
-    opacity: 0.3;
-  }
-  
-  .decoration-2, .decoration-4 {
-    display: none;
-  }
-  
-  .hero-light {
-    opacity: 0.5;
-  }
-}
-
-/* Móvil pequeño */
-@media screen and (max-width: 380px) {
-  .hero {
-    min-height: 40vh;
-  }
-}
-/* ===============================
-   GAME CARDS
-   =============================== */
-.featured-games, .games-grid {
-  margin-bottom: 4rem;
-}
-
-.featured-grid {
+.recent-grid, .games-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-.games-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
+/* ========== TARJETAS ========== */
 .game-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  transition: all var(--transition-base);
-  position: relative;
+  background: #1a1a2e;
+  border-radius: 16px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.game-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  z-index: -1;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .game-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--primary-light);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.game-card:hover::before {
-  opacity: 0.1;
+.game-image {
+  width: 100%;
+  aspect-ratio: 8/7;
+  object-fit: cover;
 }
 
-.game-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+/* ========== IFRAME ========== */
+.game-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.game-card .badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: linear-gradient(135deg, #007bff, #001f99);
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  width: fit-content;
-  box-shadow: var(--shadow-sm);
+.close-player {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #ef4444;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
 
-.game-card .btn-secondary {
+#gameFrame {
+  width: 90%;
+  height: 85%;
+  border: none;
+  border-radius: 16px;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #666;
+  font-size: 14px;
+}
+
+/* ========== MÓVIL ========== */
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 12px 20px;
+  }
+  
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  .btn-home {
+    order: 2;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    order: 1;
+  }
+  
+  .nav-categories {
+    position: fixed;
+    top: 60px;
+    right: -250px;
+    width: 220px;
+    height: auto;
+    background: #1e1b2e;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    transition: right 0.3s ease;
+    z-index: 99;
+    border-radius: 16px 0 0 16px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    margin-left: 0;
+    display: flex;
+  }
+  
+  .nav-categories.open {
+    right: 0;
+  }
+  
+  .cat-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .hero {
+    height: 210px;
+  }
+  
+  .recent-games, .all-games {
+    padding: 0 20px;
+  }
+  
+  .recent-grid, .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  #gameFrame {
+    width: 100%;
+    height: 80%;
+  }
+  
+  .close-player {
+    top: 10px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 130px;
+  }
+  .recent-grid, .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Evitar desplazamiento horizontal en móvil */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+
+/* Eliminar espacio extra debajo del footer */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
   margin-top: auto;
-  width: fit-content;
+}
+
+
+
+/* Badge 🔥 Nuevo solo en Recientes */
+.recent-grid .game-card {
+  position: relative;
+}
+
+.recent-grid .game-card::before {
+  content: "🔥 Nuevo";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #f59e0b, #dc2626);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+
+/* ========== ILUMINACIÓN AZUL AL HOVER ========== */
+.game-card {
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+
+/* ========== TÍTULO RECIENTES NEÓN AZUL Y BLANCO ========== */
+.recent-games h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px #3b82f6,
+    0 0 10px #3b82f6,
+    0 0 15px #1e40af;
+  letter-spacing: 2px;
+}
+
+
+/* Borde estilizado para la sección de Recientes */
+.recent-games {
+  border: 1px solid rgba(99, 102, 241, 0.6);
+  border-radius: 28px;
+  padding: 20px 32px;
+  margin-top: 40px;
+  margin-bottom: 48px;
+  background: linear-gradient(135deg, rgba(15, 15, 26, 0.8), rgba(30, 27, 75, 0.6));
+  box-shadow: 
+    0 0 20px rgba(99, 102, 241, 0.3),
+    inset 0 0 10px rgba(99, 102, 241, 0.1);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea decorativa superior */
+.recent-games::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #6366f1);
 }
 
 /* Efecto de brillo en las esquinas */
-.game-card::after {
+.recent-games::after {
   content: '';
   position: absolute;
   top: -2px;
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, 
-    var(--primary), 
-    var(--accent), 
-    var(--secondary), 
-    var(--primary));
-  border-radius: var(--radius-lg);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  z-index: -2;
-}
-
-.game-card:hover::after {
-  opacity: 0.5;
-  animation: rotate 4s linear infinite;
-}
-
-/* ===============================
-   AGE FILTER
-   =============================== */
-.age-filter {
-  margin: 5rem auto;
-  text-align: center;
-  max-width: 800px;
-  padding: 0.5rem;
-
-  background: url('https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg') center/cover no-repeat;
-
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.age-filter::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  border-radius: inherit;
-}
-
-.age-filter * {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* Efecto de brillo sutil en el borde */
-.age-filter::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, 
-    var(--primary), 
-    var(--accent), 
-    var(--secondary), 
-    var(--primary));
-  border-radius: var(--radius-lg);
-  opacity: 0.3;
+  background: linear-gradient(45deg, #6366f1, #a855f7, #6366f1);
+  border-radius: 30px;
+  opacity: 0.2;
   z-index: -1;
-  animation: rotate 8s linear infinite;
 }
 
-/* Efecto de destello interno */
-.age-filter::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-  pointer-events: none;
+/* Título dentro de la sección con más brillo */
+.recent-games h2 {
+  text-shadow: 
+    0 0 8px #3b82f6,
+    0 0 15px #3b82f6,
+    0 0 25px #1e40af;
+  
 }
 
-.age-filter h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  position: relative;
-  display: inline-block;
+@media (max-width: 768px) {
+  .recent-games {
+    padding: 15px 20px;
+    margin: 30px 20px 40px 20px;
+  }
 }
 
-/* Línea decorativa debajo del título */
-.age-filter h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: var(--radius-full);
-}
 
-.age-buttons {
+/* Logo con círculo azul */
+.logo {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border-radius: 50%;
   display: flex;
-  gap: 1rem;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  background-clip: unset;
+  -webkit-background-clip: unset;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.age-btn {
-  padding: 0.75rem 2rem;
-  font-family: var(--font-main);
-  font-weight: 600;
-  font-size: 1rem;
-  border: 2px solid var(--primary);
-  background: transparent;
-  color: var(--light);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
 }
 
-.age-btn.active {
-  background: linear-gradient(135deg, #0066ff, #0033cc);
-  border: 2px solid #ff0000;
-  box-shadow: 0 0 18px rgba(0, 102, 255, 0.8);
-}
-
-.age-btn:hover {
-  background: rgba(99, 102, 241, 0.2);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   GAMES SECTION
-   =============================== */
-.games-section {
-  margin-bottom: 4rem;
-  width: 100%;
-}
-
-.games-section h2 {
+.game-counter {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #3b82f6;
+  font-weight: 500;
   text-align: center;
-  margin-bottom: 2.5rem;
 }
 
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-/* ===============================
-   FOOTER
-   =============================== */
-.site-footer {
-  margin-top: 0rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efecto de fondo sutil */
-.site-footer::before {
-  content: '';
-  position: absolute;
+/* ========== MODAL DE BIENVENIDA ========== */
+.welcome-modal {
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.footer-info h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary-light), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.footer-info p {
-  color: var(--gray);
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
-
-.footer-contact h4 {
-  font-size: 1.3rem;
-  color: var(--light);
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
-
-.footer-contact h4::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: var(--radius-full);
-}
-
-.footer-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-full);
-  color: var(--light);
-  text-decoration: none;
-  font-size: 1.0rem;
-  transition: all var(--transition-base);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
-}
-
-.footer-email:hover {
-  background: rgba(99, 102, 241, 0.2);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
-.email-icon {
-  font-size: 1.3rem;
-}
-
-.footer-copyright {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-copyright p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  margin-bottom: 0.2rem;
-}
-
-.footer-made {
-  color: var(--gray-dark);
-  font-size: 0.9rem;
-}
-
-/* ===============================
-   ESTILOS ESPECÍFICOS DE JUEGOS
-   =============================== */
-.game-wrapper {
-  min-height: 80vh;
-  padding: 2rem 1rem;
-}
-
-/* Trivia Rápida */
-.trivia-game {
-  max-width: 900px;
-  margin: 2rem auto;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
-
-.trivia-progress {
-  font-size: 2.2rem;
-  color: #e9c509;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.trivia-question {
-  font-size: 2.0rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-.trivia-answers {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.trivia-answers button {
-  padding: 1rem;
-  font-family: var(--font-main);
-  font-size: 2.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
-  color: var(--light);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-align: left;
-}
-
-.trivia-answers button:hover:not(:disabled) {
-  background: rgba(99, 102, 241, 0.3);
-  transform: translateX(10px);
-  border-color: var(--primary);
-}
-
-.trivia-answers button.correct {
-  background: linear-gradient(135deg, var(--success), #059669);
-  border-color: white;
-}
-
-.trivia-answers button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.trivia-explanation {
-  padding: 1.1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  margin: 1.5rem 0;
-  border-left: 4px solid var(--primary);
-  font-size: 30px;
-}
-
-.trivia-next, .trivia-restart {
-  display: block;
-  width: 100%;
-  padding: 1rem;
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border: none;
-  border-radius: var(--radius-md);
-  color: white;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.trivia-next:hover, .trivia-restart:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* Memoria Visual y Cartas Clásicas */
-.memory-board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.memory-card {
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--primary), #d746e5);
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 5rem;
-  cursor: pointer;
-  transition: all var(--transition-base);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.welcome-modal-content {
+  background: linear-gradient(135deg, #1e1b4b, #0f0f1a);
+  border-radius: 28px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+  animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.welcome-modal-content h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.welcome-modal-content p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #ccc;
+}
+
+.welcome-close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.welcome-close:hover {
+  color: #ef4444;
+}
+
+#acceptWelcomeBtn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
   color: white;
-  box-shadow: var(--shadow-md);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#acceptWelcomeBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+/* ========== JUEGO SORPRESA ========== */
+.surprise-game {
+  padding: 0 32px;
+  
+}
+
+.surprise-game h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b;
+}
+
+.surprise-grid {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.surprise-grid .game-card {
+  aspect-ratio: 16/9;
+}
+
+.surprise-grid .game-card .game-image {
+  aspect-ratio: 16/9;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .surprise-game {
+    padding: 0 20px;
+  }
+  .surprise-grid {
+    max-width: 250px;
+  }
+}
+
+
+
+/* ========== CAJITA DE REGALO Y TARJETA SORPRESA ========== */
+.surprise-grid {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Cajita de regalo inicial */
+.gift-box {
+  background: linear-gradient(135deg, #f59e0b, #dc2626);
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gift-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(245,158,11,0.5);
+}
+
+.gift-box span {
+  font-size: 60px;
+}
+
+/* Tarjeta con signo de interrogación (inicialmente oculta) */
+.question-card {
+  background: linear-gradient(135deg, #1e1b4b, #0f0f1a);
+  border-radius: 16px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid rgba(99,102,241,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.question-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(99,102,241,0.5);
+}
+
+.question-card span {
+  font-size: 80px;
+  font-weight: bold;
+  color: #6366f1;
+  text-shadow: 0 0 10px #6366f1;
+}
+
+/* Tarjeta final con efecto flip */
+.surprise-card {
   position: relative;
-  transform-style: preserve-3d;
-}
-
-.memory-card.active {
-  transform: scale(0.95);
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-  box-shadow: var(--shadow-glow-secondary);
-}
-
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto;
+  cursor: pointer;
+  background: transparent;
   perspective: 1000px;
+  aspect-ratio: 16/9;
+  width: 100%;
 }
 
-.memory-grid .memory-card {
-  position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.memory-grid .memory-card.flipped {
-  transform: rotateY(180deg);
-}
-
-.card-inner {
+.surprise-card .flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  border-radius: 16px;
 }
 
-.card-front, .card-back {
+.surprise-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.surprise-card .flip-front,
+.surprise-card .flip-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.surprise-card .flip-front {
+  background: #1a1a2e;
+  transform: rotateY(0deg);
+}
+
+.surprise-card .flip-front img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.surprise-card .flip-back {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
-  font-size: 3.8rem;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
 }
 
-.card-front {
-  background: linear-gradient(135deg, var(--primary), #e54646);
+.surprise-card .flip-back h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
   color: white;
 }
 
-.card-back {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-  color: white;
-  transform: rotateY(180deg);
+.surprise-card .flip-back p {
+  font-size: 14px;
+  color: #ddd;
 }
 
-.memory-card.matched {
-  opacity: 0.7;
-  filter: grayscale(0.5);
-  cursor: default;
-}
-
-.memory-card.matched .card-front,
-.memory-card.matched .card-back {
-  background: linear-gradient(135deg, var(--success), #059669);
-}
-
-.memory-start, .memory-restart {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto;
-  padding: 0.8rem 2rem;
-  font-family: var(--font-main);
-  font-size: 1.8rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+.surprise-card .flip-back button {
+  margin-top: 15px;
+  background: white;
   border: none;
-  border-radius: var(--radius-full);
-  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #6366f1;
   cursor: pointer;
-  transition: all var(--transition-base);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: transform 0.2s;
 }
 
-.memory-start:hover, .memory-restart:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-glow);
+.surprise-card .flip-back button:hover {
+  transform: scale(1.05);
 }
 
-/* ===============================
-   ANIMACIONES
-   =============================== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Animación de deslizamiento hacia arriba */
+.slide-up {
+  animation: slideUp 0.5s ease forwards;
 }
 
 @keyframes slideUp {
@@ -938,980 +718,105 @@ p {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* ... todo tu CSS existente ... */
+
+/* ========== CAJITA DE REGALO Y TARJETA SORPRESA ========== */
+.surprise-grid {
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+/* ... todo el CSS del juego sorpresa que ya tienes ... */
+
+/* Ajustes de tamaño para cajita y tarjeta */
+.gift-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
+.gift-box span {
+  font-size: 50px;
 }
 
-@keyframes scan {
+.question-card {
+  width: 200px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.question-card span {
+  font-size: 50px;
+}
+
+.surprise-card {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.surprise-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+
+/* Centrar título del juego sorpresa */
+.surprise-game {
+  text-align: center;
+}
+
+.surprise-game h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+.surprise-game {
+  padding-bottom: 0;
+}
+
+.surprise-game h2 {
+  margin-bottom: 5px;
+}
+
+
+/* Animación de apertura de la cajita */
+@keyframes abrirCajita {
   0% {
-    transform: translateX(-100%) rotate(-5deg);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) rotate(5deg);
+    background: linear-gradient(135deg, #f59e0b, #dc2626);
   }
   100% {
-    transform: translateX(100%) rotate(-5deg);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* ===============================
-   MEDIA QUERIES - RESPONSIVE
-   =============================== */
-
-/* Tablet (600px - 1023px) */
-@media screen and (min-width: 600px) {
-  .page-wrapper {
-    padding: 1.5rem;
-  }
-  
-  h1 {
-    font-size: 2.8rem;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-  }
-  
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .games-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .trivia-answers {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .memory-board {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .memory-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  /* Footer Tablet */
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    text-align: left;
-    gap: 3rem;
-  }
-  
-  .footer-info, .footer-contact {
-    text-align: left;
-  }
-  
-  .footer-contact h4::after {
-    left: 0;
-    transform: none;
-  }
-  
-  .footer-copyright {
-    grid-column: span 2;
-    text-align: center;
-  }
-  
-  .footer-email {
-    justify-content: flex-start;
-  }
-}
-
-/* Desktop (1024px+) */
-@media screen and (min-width: 1024px) {
-  .page-wrapper {
-    padding: 2rem;
-  }
-  
-  h1 {
-    font-size: 4.5rem;
-  }
-  
-  h2 {
-    font-size: 3rem;
-  }
-  
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .games-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .hero {
-    min-height: 70vh;
-  }
-  
-  .trivia-answers {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .memory-board {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  
-  .memory-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  
-  /* Efectos hover mejorados para desktop */
-  .game-card {
-    padding: 2rem;
-  }
-  
-  .game-card:hover {
-    transform: translateY(-12px) scale(1.03);
-  }
-  
-  .age-btn {
-    font-size: 1.1rem;
-    padding: 1rem 3rem;
-  }
-  
-  /* Footer Desktop */
-  .footer-content {
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    align-items: center;
-    gap: 4rem;
-  }
-  
-  .footer-copyright {
-    grid-column: auto;
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-    text-align: right;
-  }
-  
-  .footer-info, .footer-contact, .footer-copyright {
-    text-align: left;
-  }
-  
-  .footer-copyright {
-    text-align: right;
-  }
-  
-  .footer-contact h4::after {
-    left: 0;
-    transform: none;
-  }
-}
-
-/* Pantallas grandes (1440px+) */
-@media screen and (min-width: 1440px) {
-  .games-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .memory-board {
-    grid-template-columns: repeat(5, 1fr);
-    max-width: 800px;
-  }
-  
-  .memory-grid {
-    grid-template-columns: repeat(5, 1fr);
-    max-width: 800px;
-  }
-}
-
-/* Móvil */
-@media screen and (max-width: 600px) {
-  .hero {
-    min-height: 30vh; /* REDUCIDO de 70vh a 30vh */
-  }
-  
-  .hero-character {
-    opacity: 1; /* Mantenemos opacidad normal */
-  }
-  
-  .decoration-1, .decoration-3 {
-    font-size: 1.5rem;
-    opacity: 0.2;
-  }
-  
-  .decoration-2, .decoration-4 {
-    display: none;
-  }
-  
-  .hero-light {
-    opacity: 0.3;
-  }
-  
-  /* El resto de estilos para móvil (games-grid, age-filter, etc.) */
-  .games-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .age-filter {
-    margin: 3rem auto;
-    padding: 1.5rem;
-  }
-  
-  .age-filter h2 {
-    font-size: 1.5rem;
-  }
-  
-  .age-buttons {
-    gap: 0.8rem;
-  }
-  
-  .age-btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Móvil pequeño */
-@media screen and (max-width: 380px) {
-  .hero {
-    min-height: 25vh; /* Aún más pequeño */
-  }
-  
-  .site-footer {
-    padding: 2rem 1rem;
-  }
-  
-  .footer-email {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-/* ===============================
-   UTILIDADES
-   =============================== */
-.text-center {
-  text-align: center;
-}
-
-.mt-auto {
-  margin-top: auto;
-}
-
-.mb-auto {
-  margin-bottom: auto;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* Scroll personalizado */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--accent));
-}
-
-/* ===============================
-   ESTADOS DE CARGA
-   =============================== */
-.loading {
-  position: relative;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.loading::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  margin: -15px 0 0 -15px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: var(--primary);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-/* ===============================
-   ACCESIBILIDAD
-   =============================== */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus visible para navegación por teclado */
-:focus-visible {
-  outline: 2px solid var(--secondary);
-  outline-offset: 2px;
-}
-
-/* ===============================
-   IMPRESIÓN
-   =============================== */
-@media print {
-  body {
-    background: white;
-    color: black;
-  }
-  
-  .hero, .game-card, .btn-primary, .btn-secondary {
-    background: none;
-    color: black;
-    border: 1px solid black;
-  }
-  
-  #games-modal-overlay {
-    display: none !important;
-  }
-}
-
-.game-wrapper p {
-  font-size: 1rem;
-  text-align: center;
-}
-
-.cards-start button{
-font-size: 45px;
-}
-
-/* ===============================
-   SOLO CENTRAR TÍTULO DE TRIVIA RÁPIDA EN PC
-   =============================== */
-@media screen and (min-width: 1024px) {
-   body:has(.trivia-game) .trivia-game {
-    max-width: 700px !important;
-    width: 90% !important;
-    margin: 0 auto !important;
-    padding: 1.5rem !important;
-  }
-  
-  body:has(.trivia-game) .trivia-game h1 {
-    text-align: center !important;
-    width: 100% !important;
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    font-size: 2rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  body:has(.trivia-game) .trivia-progress {
-    font-size: 1.1rem !important;
-    margin-bottom: 0.8rem !important;
-    text-align: center !important;
-  }
-  
-  body:has(.trivia-game) .trivia-question {
-    font-size: 1.3rem !important;
-    margin-bottom: 1rem !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-  }
-  
-  body:has(.trivia-game) .trivia-answers {
-    gap: 0.7rem !important;
-    margin-bottom: 0.8rem !important;
-  }
-  
-  body:has(.trivia-game) .trivia-answers button {
-    font-size: 1.1rem !important;
-    padding: 0.7rem !important;
-    text-align: center !important;
-  }
-  
-  body:has(.trivia-game) .trivia-explanation {
-    font-size: 0.95rem !important;
-    padding: 0.8rem !important;
-    margin: 0.8rem 0 !important;
-    text-align: center !important;
-  }
-  
-  body:has(.trivia-game) .trivia-next,
-  body:has(.trivia-game) .trivia-restart {
-    font-size: 1rem !important;
-    padding: 0.7rem !important;
-    margin-top: 0.5rem !important;
-    text-align: center !important;
-  }
-}
-
-/* ===============================
-   ESTILO PARA BOTÓN EMPEZAR - CORREGIDO
-   =============================== */
-button.cards-start {
-  background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 999px !important;
-  padding: 1rem 2rem !important;
-  font-family: 'Poppins', sans-serif !important;
-  font-size: 1.7rem !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  transition: all 0.3s ease !important;
-  display: block !important;
-  margin: 2rem auto !important;
-  width: fit-content !important;
-  min-width: 200px !important;
-  text-align: center !important;
-}
-
-button.cards-start:hover {
-  transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5) !important;
-}
-
-
-/* ===============================
-   MODAL DE JUEGOS EXTERNOS - DISEÑO MEJORADO
-   =============================== */
-#games-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeInModal 0.3s ease;
-}
-
-#games-modal-overlay[hidden] {
-  display: none;
-}
-
-@keyframes fadeInModal {
-  from {
+    transform: scale(0);
     opacity: 0;
   }
-  to {
+}
+
+@keyframes salirTarjeta {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
 
-.games-modal {
-  background: linear-gradient(145deg, #1e1b4b, #0f172a);
-  border-radius: 40px;
-  max-width: 1000px;
-  width: 90%;
-  border: 2px solid rgba(99, 102, 241, 0.5);
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8),
-              0 0 30px rgba(99, 102, 241, 0.5),
-              inset 0 0 20px rgba(99, 102, 241, 0.3);
-  animation: slideUpModal 0.4s ease;
+.gift-box.abriendo {
+  animation: abrirCajita 0.6s ease forwards;
 }
 
-@keyframes slideUpModal {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.games-modal-header {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  padding-right: 15px;
-  padding-top: 15px;
-}
-
-.games-modal-header::after {
-  content: '🎮 SELECCIONA UN JUEGO';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: 1.3rem;
-  text-shadow: 0 0 10px #6366f1;
-  letter-spacing: 2px;
-  background: linear-gradient(135deg, #6366f1, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#close-games-modal {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5),
-              0 0 20px #6366f1;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  z-index: 10;
-}
-
-#close-games-modal:hover {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 0 30px #ef4444;
-  border-color: white;
-}
-
-.games-modal-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.external-game {
-  background: linear-gradient(145deg, #2d2a6e, #1e1b4b);
-  border-radius: 30px;
-  padding: 2.5rem 1rem;
-  text-align: center;
-  color: white;
-  font-weight: 700;
-  font-size: 1.4rem;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5),
-              0 0 20px rgba(99, 102, 241, 0.3);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  backdrop-filter: blur(5px);
-  position: relative;
-  overflow: hidden;
-}
-
-.external-game::before {
-  display: none !important;
-}
-
-.external-game::after {
-  content: '🎮';
-  font-size: 4rem;
-  display: block;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
-}
-
-.external-game:nth-child(1)::after {
-  content: '🏎️';
-}
-
-.external-game:nth-child(2)::after {
-  content: '🥊';
-}
-
-.external-game:nth-child(3)::after {
-  content: '⚡';
-}
-
-.external-game:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: linear-gradient(145deg, #4f46e5, #2d2a6e);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6),
-              0 0 40px #6366f1;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-@media screen and (max-width: 600px) {
-  .games-modal {
-    padding: 0.9rem;
-    max-height: 96vh;
-    overflow-y: auto;
-  }
-  
-  .games-modal-content {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .games-modal-header::after {
-    font-size: 1rem;
-    top: 15px;
-  }
-  
-  #close-games-modal {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 900px) {
-  .games-modal-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .external-game:last-child {
-    grid-column: span 2;
-  }
-}
-
-
-/* 🔧 AJUSTE GENERAL DE TAMAÑO EN JUEGOS */
-
-.trivia-question {
-  font-size: 1.3rem;
-}
-
-.trivia-answers button {
-  font-size: 1.1rem;
-}
-
-.trivia-next,
-.trivia-restart {
-  font-size: 1rem;
-}
-
-.trivia-progress {
-  font-size: 1.1rem;
-}
-
-.memory-card {
-  font-size: 2rem;
-}
-
-button.cards-start {
-  font-size: 1rem !important;
-}
-
-/* 📱 TRIVIA EN MÓVIL: 2 COLUMNAS */
-@media screen and (max-width: 600px) {
-  .trivia-answers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-  }
-}
-
-/* 📱 CENTRAR TEXTO EN JUEGOS (MÓVIL) */
-@media screen and (max-width: 600px) {
-
-  .trivia-question {
-    text-align: center;
-  }
-
-  .trivia-answers button {
-    text-align: center;
-  }
-
-}
-
-.btn-back {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 9999;
-
-  padding: 10px 15px;
-  background: #6366f1;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* 📱 AJUSTE SOLO EN MÓVIL */
-@media screen and (max-width: 600px) {
-  .btn-back {
-    position: static;
-    display: block;
-    margin: 15px auto;
-  }
-}
-
-/* 🏠 BOTÓN INICIO */
-.btn-home {
-  display: block;
-  margin: 8px 15px 0px auto;
-
-  padding: 8px 14px;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: white;
-  border: none;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* 📱 MÓVIL */
-@media screen and (max-width: 600px) {
-  .btn-home {
-    position: static;
-    display: block;
-   
-  }
-}
-
-.hero {
-  margin-top: 0;
-}
-
-.page-wrapper {
-  padding-top: 0.5rem;
-}
-
-@media screen and (max-width: 600px) {
-  .btn-home {
-    margin-top: 0px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .btn-home {
-    margin-top: 4px;
-  }
-}
-
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 15px;
-}
-
-.logo-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 900;
-  font-size: 15px;
-  letter-spacing: 1px;
-
-  /* 🔥 EFECTO 3D REALISTA (SUAVE, NO DUPLICADO) */
-  box-shadow:
-    0 4px 6px rgba(0,0,0,0.3),   /* base */
-    0 8px 16px rgba(0,0,0,0.4),  /* profundidad */
-    0 0 8px rgba(99,102,241,0.4); /* glow azul */
-
-  transition: all 0.25s ease;
-  cursor: pointer;
-}
-
-.logo-circle:hover {
-  transform: translateY(-4px) scale(1.05);
-
-  box-shadow:
-    0 8px 12px rgba(0,0,0,0.4),
-    0 16px 25px rgba(0,0,0,0.6),
-    0 0 12px rgba(99,102,241,0.6);
-}
-
-.game-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.game-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.1)
-  );
-
-  z-index: 0;
-}
-
-.game-card h3,
-.game-card .badge,
-.game-card .btn-secondary {
-  position: relative;
-  z-index: 1;
-}
-
-.game-card {
-  background: linear-gradient(145deg, #1e1b4b, #0f172a);
-  border: 1px solid rgba(99, 102, 241, 0.4);
-}
-
-.game-card {
-  background: radial-gradient(circle at top, #6366f1, #0f172a);
-}
-
-.game-card {
-  background: radial-gradient(circle at 30% 20%, #818cf8, #1e1b4b 40%, #020617 100%);
-}
-
-.game-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.4), transparent 60%);
-  opacity: 0.5;
-}
-
-.game-trivia {
-  background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
-}
-
-.game-trivia {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
-}
-
-.game-trivia {
-  background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
-}
-
-.game-trivia,
-.game-cartas,
-.game-carreras,
-.game-combate,
-.game-memoria,
-.game-reflejos {
-  background-position: top center;
-}
-
-.game-cartas {
-  background: url('https://tse3.mm.bing.net/th/id/OIP.RaoeMi8cQ_Uas9esTzTucAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
-}
-
-.game-memoria {
-  background: url('https://tse2.mm.bing.net/th/id/OIP.GJI8rZm281sPuRGW3fXQ3wHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
-}
-
-.game-carreras {
-  background: url('https://www.gameuidatabase.com/uploads/The-Crew-Motorfest11072024-022729-41605.jpg') top center / cover no-repeat;
-}
-
-.game-combate {
-  background: url('https://tse3.mm.bing.net/th/id/OIP.JEdHsy1w6fPnZAbJvCmxxgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
-}
-
-.game-reflejos {
-  background: url('https://as01.epimg.net/meristation/imagenes/2022/10/02/reportajes/1664692511_228622_1664696359_portada_normal.jpg') top center / cover no-repeat;
-}
-
-
-.featured.game-trivia {
-  background: url('https://tse2.mm.bing.net/th/id/OIP.GGgok5Mx5-HErIi2l8R1PgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
-}
-
-.featured.game-carreras {
-  background: url('https://tse2.mm.bing.net/th/id/OIP.0kFBTd08BfjDkUJp9nJU6QHaDt?rs=1&pid=ImgDetMain&o=7&rm=3') top center / cover no-repeat;
-}
-
-.featured.game-memoria {
-  background: url('https://i.ytimg.com/vi/e1RSQGvVhOo/maxresdefault.jpg') top center / cover no-repeat;
-}
-
-.game-card h3 {
-  background: none;
-  -webkit-text-fill-color: #ffffff;
-  color: #ffffff;
-}
-
-.game-card h3 {
-  text-shadow: 
-    0 0 10px rgba(255, 0, 0, 1),
-    0 0 20px rgba(255, 0, 0, 0.9);
-}
-
-.games-section h2 {
-  background: none;
-  -webkit-text-fill-color: #ffffff;
-  color: #ffffff;
-  text-shadow: 
-    0 0 10px rgba(255, 0, 0, 1),
-    0 0 20px rgba(255, 0, 0, 0.9);
-}
-
-.age-filter h2 {
-  background: none;
-  -webkit-text-fill-color: #ffffff;
-  color: #ffffff;
-  text-shadow: 
-    0 0 10px rgba(255, 0, 0, 1),
-    0 0 20px rgba(255, 0, 0, 0.9);
-}
-
-.featured-games h2 {
-  background: none;
-  -webkit-text-fill-color: #ffffff;
-  color: #ffffff;
-  text-shadow: 
-    0 0 10px rgba(255, 0, 0, 1),
-    0 0 20px rgba(255, 0, 0, 0.9);
+.question-card.saliendo {
+  animation: salirTarjeta 0.5s ease forwards;
 }
