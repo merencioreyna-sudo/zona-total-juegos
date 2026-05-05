@@ -4,190 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zona Total Juegos</title>
-
-  <!-- CSS principal -->
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
 <div class="top-bar">
-
-  <div class="logo-circle">ZT</div>
-
-  <button class="btn-home" onclick="window.location.href='https://merencioreyna-sudo.github.io/zona-total-peliculas/'">
-    🏠 Inicio
-  </button>
-
+  <div class="logo">ZT</div>
+  
+  <div class="nav-categories" id="navCategories">
+    <button class="cat-btn active" data-cat="todos">🔥 Todos</button>
+    <button class="cat-btn" data-cat="carreras">🏎️ Carreras</button>
+    <button class="cat-btn" data-cat="combate">👊 Combate</button>
+    <button class="cat-btn" data-cat="reflejos">⚡ Reflejos</button>
+    <button class="cat-btn" data-cat="puzzles">🧩 Puzzles</button>
+    <button class="cat-btn" data-cat="arcade">🎯 Arcade</button>
+    <button class="cat-btn" data-cat="accion">🎬 Acción</button>
+    <button class="cat-btn" data-cat="deportes">⚽ Deportes</button>
+    <button class="cat-btn" data-cat="aventura">🗺️ Aventura</button>
+  </div>
+  
+  <button class="btn-home" onclick="window.location.href='https://merencioreyna-sudo.github.io/zona-total-peliculas/'">🏠 Inicio</button>
+  <button class="menu-toggle" id="menuToggle">☰</button>
 </div>
 
-<div class="page-wrapper">
-	
-<!-- HERO -->
 <header class="hero">
-  <!-- Elementos decorativos flotantes -->
-  <div class="hero-decoration decoration-1">🎮</div>
-  <div class="hero-decoration decoration-2">⚡</div>
-  <div class="hero-decoration decoration-3">🔥</div>
-  <div class="hero-decoration decoration-4">⭐</div>
-  
-  <!-- Líneas de luz decorativas -->
-  <div class="hero-light light-1"></div>
-  <div class="hero-light light-2"></div>
-  
-  <!-- Imagen de fondo con personaje gamer -->
-  <div class="hero-image">
-    <!-- Por ahora usamos un div con gradiente, pero aquí irá tu imagen -->
-    <div class="hero-character"></div>
-  </div>
-  
-  <div class="hero-content">
-    <!-- Texto con estilo gamer -->
-    <div class="hero-tagline">🎯 ZONA TOTAL</div>
-    <h1>GAMER</h1>
-    <p class="hero-subtitle">Juega. Compite. Diviértete.</p>
-    
-    <!-- Stats decorativos (como en tus capturas) -->
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-value">50+</span>
-        <span class="stat-label">Juegos</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">24/7</span>
-        <span class="stat-label">Online</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">🔥</span>
-        <span class="stat-label">Retos</span>
-      </div>
-    </div>
-    
-    <button class="btn-primary hero-btn">Jugar ahora</button>
-  </div>
+  <div class="hero-image"></div>
 </header>
 
-  <!-- JUEGOS DESTACADOS -->
-  <section class="featured-games reveal">
-
-    <h2>Juegos destacados</h2>
-
-    <div class="featured-grid">
-      <article class="game-card featured game-trivia">
-        <h3>Trivia Rápida</h3>
-        <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
-      </article>
-
-      <article class="game-card featured game-carreras">
-        <h3>Carreras Arcade</h3>
-        <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
-      </article>
-
-      <article class="game-card featured game-memoria">
-        <h3>Memoria Visual</h3>
-        <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
-      </article>
-    </div>
-  </section>
-
-  <!-- SELECTOR DE EDADES -->
-  <section class="age-filter">
-    <h2>Elige tu categoría</h2>
-
-    <div class="age-buttons">
-      <button class="age-btn active">Adolescentes</button>
-      <button class="age-btn">Para Todos</button>
-    </div>
-  </section>
-
-  <!-- GRID DE JUEGOS -->
-<section class="games-section">
-  <h2>Todos los juegos</h2>
-  
-  <main class="games-grid">
-    <article class="game-card game-trivia">
-      <h3>Trivia Rápida</h3>
-      <span class="badge">Adolescentes</span>
-      <button class="btn-secondary" data-game="trivia-rapida">Jugar</button>
-    </article>
-
-    <article class="game-card game-cartas">
-      <h3>Cartas Clásicas</h3>
-      <span class="badge">Para Todos</span>
-      <button class="btn-secondary" data-game="cartas-clasicas">Jugar</button>
-    </article>
-
-    <article class="game-card game-carreras">
-      <h3>Carreras Arcade</h3>
-      <span class="badge">Adolescentes</span>
-      <button class="btn-secondary" data-game="carreras-arcade">Jugar</button>
-    </article>
-
-    <article class="game-card game-combate">
-      <h3>Combate Ligero</h3>
-      <span class="badge">Adolescentes</span>
-      <button class="btn-secondary" data-game="combate-ligero">Jugar</button>
-    </article>
-
-    <article class="game-card game-memoria">
-      <h3>Memoria Visual</h3>
-      <span class="badge">Para Todos</span>
-      <button class="btn-secondary" data-game="memoria-visual">Jugar</button>
-    </article>
-
-    <article class="game-card game-reflejos">
-      <h3>Juego de Reflejos</h3>
-      <span class="badge">Para Todos</span>
-      <button class="btn-secondary" data-game="juego-reflejos">Jugar</button>
-    </article>
-  </main>
+<section class="recent-games">
+  <h2>RECIENTES</h2>
+  <div class="recent-grid" id="recentGrid"></div>
 </section>
 
-  <!-- FOOTER -->
-</div>
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-info">
-      <h3>Zona Total Juegos</h3>
-      <p>Tu destino para la diversión online</p>
-    </div>
-    
-    <div class="footer-contact">
-      <h4>Contacto</h4>
-      <a href="mailto:anelistrabajo@gmail.com" class="footer-email">
-        <span class="email-icon">📧</span>
-        anelistrabajo@gmail.com
-      </a>
-    </div>
-    
-    <div class="footer-copyright">
-      <p>&copy; 2026 Zona Total Juegos. Todos los derechos reservados.</p>
-      <p class="footer-made">Hecho con ❤️ para jugadores</p>
+<section class="all-games">
+  <h2>TODOS LOS JUEGOS</h2>
+  <div class="games-grid" id="gamesGrid"></div>
+</section>
+
+<!-- Juego sorpresa rotatorio -->
+<section class="surprise-game">
+  <h2>🎁 Juego Sorpresa</h2>
+  <div id="surpriseGameGrid" class="surprise-grid">
+    <div class="game-card">
+      <img class="game-image" src="" alt="Cargando juego sorpresa...">
     </div>
   </div>
+</section>
+
+<div class="game-player" id="gamePlayer" style="display: none;">
+  <button class="close-player" id="closePlayer">✕</button>
+  <iframe id="gameFrame" src="" frameborder="0"></iframe>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Zona Total Juegos - Todos los derechos reservados</p>
+  <div class="game-counter" id="gameCounter">🎮 Cargando juegos...</div>
 </footer>
 
-  <!-- JS principal -->
-  <script src="main.js"></script>
-  
+<script src="main.js"></script>
 
-<!-- VENTANA JUEGOS EXTERNOS -->
-<div id="games-modal-overlay" hidden>
-  <div class="games-modal">
-
-    <div class="games-modal-header">
-      
-      <button id="close-games-modal">✕</button>
-    </div>
-
-    <div class="games-modal-content">
-      <div class="external-game">Juego 1</div>
-      <div class="external-game">Juego 2</div>
-      <div class="external-game">Juego 3</div>
-    </div>
-
+<!-- Modal de bienvenida -->
+<div id="welcomeModal" class="welcome-modal" style="display: none;">
+  <div class="welcome-modal-content">
+    <span class="welcome-close" id="closeWelcomeModal">&times;</span>
+    <h3>🎉 ¡Bienvenido a Zona Total Juegos!</h3>
+    <p>Disfruta de los mejores juegos gratis, sin salir de la página.</p>
+    <button id="acceptWelcomeBtn">¡A JUGAR!</button>
   </div>
 </div>
-
 
 </body>
 </html>
